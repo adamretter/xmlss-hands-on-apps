@@ -1,0 +1,5 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/xmlss/whatithink.com/users" owner="jbrown" group="whatithink.users" mode="777" created="2011-05-02T20:49:04+02:00" version="1">
+    <subcollection name="cjoy" filename="cjoy"/>
+    <subcollection name="jbrown" filename="jbrown"/>
+    <subcollection name="aretter" filename="aretter"/>
+</collection>

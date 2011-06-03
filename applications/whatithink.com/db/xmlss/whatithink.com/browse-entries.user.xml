@@ -1,0 +1,1 @@
+<div xmlns="http://www.w3.org/1999/xhtml" id="userEntrys"><h2>Browse My Entries</h2><ul id="userEntryList"><li><a href="{$uri}"/>{$title}</li></ul></div>

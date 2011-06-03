@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram version="1.0" type="MySQL" versionMajor="5" versionMinor="0" groupSchema="false">
+<Table id="0" name="customer" schema="" database="xmlss_printer">
+<Column id="1" name="id" type="integer" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="IDENTITY">YES</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="2" name="title" type="varchar" length="4" nulls="false"/>
+<Column id="3" name="surname" type="varchar" length="20" nulls="false"/>
+<Column id="4" name="forename" type="varchar" length="20" nulls="false"/>
+<Column id="5" name="telephone" type="varchar" length="15" nulls="false"/>
+<Column id="6" name="fax" type="varchar" length="15" nulls="true"/>
+<Column id="7" name="email" type="varchar" length="30" nulls="false"/>
+<Column id="8" name="building_number" type="smallint" length="25" nulls="true">
+<CP name="PRECISION">15</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="9" name="building_name" type="varchar" length="30" nulls="true"/>
+<Column id="10" name="address_line_1" type="varchar" length="30" nulls="false"/>
+<Column id="11" name="address_line_2" type="varchar" length="30" nulls="true"/>
+<Column id="12" name="address_line_3" type="varchar" length="30" nulls="true"/>
+<Column id="13" name="postcode" type="varchar" length="7" nulls="false"/>
+<Column id="14" name="country" type="varchar" length="20" nulls="true"/>
+<Storage name="Charset" value="utf8"/>
+<Storage name="Collation" value=""/>
+<Storage name="Engine" value=""/>
+</Table>
+<Table id="15" name="item" schema="" database="xmlss_printer">
+<Column id="16" name="id" type="integer" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="IDENTITY">YES</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="17" name="description" type="varchar" length="80" nulls="false"/>
+<Column id="18" name="price" type="float" length="25" nulls="false">
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="19" name="content" type="mediumtext" length="25" nulls="false">
+<CP name="CHARSET">utf8</CP>
+</Column>
+<Storage name="Charset" value="utf8"/>
+<Storage name="Collation" value=""/>
+<Storage name="Engine" value=""/>
+</Table>
+<Table id="20" name="order_t" schema="" database="xmlss_printer">
+<Column id="21" name="id" type="integer" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="IDENTITY">YES</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="22" name="customer_id" type="integer" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="23" name="item_id" type="integer" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="24" name="request_id" type="varchar" length="15" nulls="false"/>
+<Column id="25" name="quantity" type="smallint" length="25" nulls="false">
+<CP name="PRECISION">15</CP>
+<CP name="UNSIGNED">YES</CP>
+</Column>
+<Column id="26" name="date_placed" type="timestamp" length="25" nulls="false"/>
+<Column id="27" name="payment_method" type="varchar" length="20" nulls="false"/>
+<Column id="28" name="dispatched" type="bit" length="10" nulls="false">
+<CP name="PRECISION">1</CP>
+</Column>
+<Storage name="Charset" value="utf8"/>
+<Storage name="Collation" value=""/>
+<Storage name="Engine" value=""/>
+</Table>
+<Relation id="29" name="order_customer_fk" cardinality="-2" identifying="true" nulls="false">
+<FK>1</FK>
+<PK>22</PK>
+</Relation>
+<Relation id="30" name="order_item_fk" cardinality="-2" identifying="true" nulls="false">
+<FK>16</FK>
+<PK>23</PK>
+</Relation>
+<Constraint table="0" name="PK_customer_1" type="PrimKey">
+<ConstraintColumn id="1"/>
+</Constraint>
+<Constraint table="15" name="PK_item_1" type="PrimKey">
+<ConstraintColumn id="16"/>
+</Constraint>
+<Constraint table="20" name="PK_order_1" type="PrimKey">
+<ConstraintColumn id="21"/>
+</Constraint>
+<Sheet name="Untitled 1" id="31" disp_at="true" disp_ph="true" disp_co="true" disp_rn="true">
+<Place id="30" visible="true">500,0,0,0</Place>
+<Place id="0" visible="true">90,30,271,331</Place>
+<Place id="15" visible="true">990,110,181,141</Place>
+<Place id="20" visible="true">500,90,221,191</Place>
+<Place id="29" visible="true" options="90.0,30.0,271.0,331.0,500.0,90.0,221.0,191.0,2,361.0,190.0,500.0,190.0">553,-20,0,0</Place>
+</Sheet>
+<Settings sheet="31" zoom="1.0"/>
+</Diagram>

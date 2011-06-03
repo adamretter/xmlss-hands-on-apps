@@ -1,0 +1,1 @@
+<div xmlns="http://www.w3.org/1999/xhtml"><div id="content" class="text_links"><div id="userEntrys"/><div><h2>Browse All Entries</h2><ul id="publicEntryList"><li><a href="{$uri}">{$title}</a></li></ul></div><div><span><img src="images/icons/tick.gif" alt="Print/Order"/>Mark for Printing/Ordering</span></div></div><div id="contentFooter"><a href="./">Home</a></div></div>

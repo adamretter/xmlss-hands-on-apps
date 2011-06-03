@@ -1,0 +1,3 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/xmlss/whatithink.com/users/aretter" owner="aretter" group="whatithink.users" mode="744" created="2011-05-02T20:57:05+02:00" version="1">
+    <resource type="XMLResource" name="user.metadata.xml" owner="aretter" group="whatithink.users" mode="755" created="2011-05-02T20:57:05+02:00" modified="2011-05-02T20:57:05+02:00" filename="user.metadata.xml" mimetype="application/xml"/>
+</collection>

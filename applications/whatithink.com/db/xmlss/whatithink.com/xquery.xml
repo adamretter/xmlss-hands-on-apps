@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml" id="content" class="text_links"><script type="text/javascript">
+        <!--
+            $(document).ready(function(){
+                $("#execute").click(function(){
+                    
+                    jQuery.ajax({
+                        type: "POST",
+                        url: location.href,
+                        dataType: "html",
+                        data: "xquery=" + encodeURIComponent($("#xquery").val()),
+                        success: function(response){
+                            $("#queryResults").removeClass("error");
+                           $("#queryResults").html($.wrapXml(response));
+                        },
+                        error:function (xhr, ajaxOptions, thrownError){
+                            $("#queryResults").addClass("error");
+                            $("#queryResults").html(thrownError);
+                        }    
+                    });
+                    
+                });
+            });
+        --></script><h2>Run XQuery</h2><form><textarea id="xquery">
+xquery version "1.0";
+
+(: write your code here :)
+        </textarea><input id="execute" type="button" value="Execute"/></form><h3>Results</h3><div id="queryResults"/></div>

@@ -1,0 +1,382 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+    text-align: center;
+    font: 0.8em verdana, arial, sans-serif;
+    line-height: 170%;
+    background: #fff url(../images/bg/header.jpg) repeat-x top left;
+}
+
+#wrapper {
+    width:870px; margin:0 auto; text-align:left;
+}
+
+#header {
+    display: block;
+    background-image:url(../images/bg/print_banner.gif);
+    background-repeat:no-repeat;
+    background-position:center;
+    color: #fff;
+    width:100%;
+    height:210px;
+}
+
+#lnavi {
+    width:200px;
+    float:left;
+    text-align:left;
+}
+
+#content {
+    background-image: url(../images/bg/faded_book.gif);
+    background-repeat: no-repeat;
+    width: 654px;
+    float: left;
+    padding: 0.5em;
+    border: thin dotted #CCCCCC;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+}
+
+#footer {
+    background: #fff url(../images/bg/footer.jpg) repeat-x top left;
+    background-position: center;
+    height: 52px;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    clear: both;
+}
+
+
+#leftMenu {
+    margin: 1em 1em 1em 1em;
+}
+
+.curvy {
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    background:#555;
+    color:#000;
+}
+  
+#ctl, #cbl, #ctr, #cbr {
+    position:absolute;
+    width:20px;
+    height:20px;
+    color:#08c;
+    background:#fff;
+    overflow:hidden;
+}
+
+#ctl {top:0px; left:0px;}
+#cbl {top:80px; left:0px;}
+#ctr {top:0px; left:155px;}
+#cbr {top:80px; left:155px;}
+
+#quadtl, #quadtr, #quadbl, #quadbr {
+    position:absolute; font-size:150px; font-family:arial; color:#555; line-height:40px;
+}
+
+#quadtl {left:-8px;}
+#quadtr {left:-25px;}
+#quadbl {left:-8px; top:-17px;}
+#quadbr {left:-25px; top:-17px;}
+#txt { 
+    margin: 1em 1em 1em 1em;
+}
+
+#admin_navi {
+    background-image:url(../images/bg/navi_bar.gif);
+    height:50px;
+    width:100%;
+    border:1px solid #000;
+    text-align:center;
+    vertical-align:bottom;
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000;
+}
+
+#prnt_admin_navi {
+    background-image:url(../images/bg/prnt_navi_bar.gif);
+    height:50px;
+    width:100%;
+    border:1px solid #000;
+    text-align:center;
+    vertical-align:bottom;
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000;
+}
+
+
+.text_content {
+    font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000000;
+}
+
+.text_error {
+    font-size:16px;
+    font-family:Arial, Helvetica, sans-serif;
+    width:654px;
+    float: left;
+    padding: 6px;
+    background: #ffcccc;
+    color:#000000;
+    border: thin dotted #CCCCCC;
+}
+
+.text_success {
+    font-size:16px;
+    font-family:Arial, Helvetica, sans-serif;
+    width:654px;
+    float: left;
+    padding: 6px;
+    background: #ccffcc;
+    color:#000000;
+    border: thin dotted #CCCCCC;
+}
+
+.heading {
+    font-size:36px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    line-height:normal;
+}
+
+.blue_subheading {
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #66ffff;
+}
+
+.black_subheading {
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000000;
+}
+
+.main_sublinks a:link{
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.text_links a:link, a:visited, a:active {
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 16px;
+    font-weight: normal;
+    color:#00CCFF;
+    text-decoration:underline;
+}
+
+.text_links a:hover{
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 16px;
+    font-weight: normal;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.small_text {
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 11px;
+    font-weight: normal;
+    color:#00CCFF;
+    text-decoration:underline;
+}
+
+.small_text {
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 11px;
+    font-weight: normal;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.members_navi a:link{
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000000;
+}
+
+.members_navi a:hover{
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000000;
+}
+
+.members_navi a:visited{
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000000;
+}
+
+blockquote.arrow {
+  background-image: url(../images/icons/arrow.gif);
+  background-repeat:no-repeat;
+}
+
+ul {
+    text-align:left;
+    list-style-image:url(../images/icons/arrow_grey.gif);
+}
+
+img.floatLeft { 
+    float: left;
+    margin: 4px;
+}
+
+img.floatRight { 
+    float: right;
+    margin: 4px;
+}
+
+h2 {
+    color: #00CCFF;
+}
+
+h4 {
+    font-size:18px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight:bold;
+    color: #000000;
+    margin-top: 10px;
+    /* border-bottom: 1px dotted #999; */
+}
+
+
+input, textarea, checkbox, select {
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-size: 12px;
+    border: 1px solid #66ffff;
+}
+
+
+#loginFailedMessage {
+    color: #ff0000;
+    font-style: italic;
+    font-size: smaller;
+}
+
+#contentFooter {
+    text-align: center;
+}
+
+.centeredText {
+    text-align: center;
+}
+
+.solidText {
+    font-weight: bold;
+}
+
+.stressedText {
+    font-style: oblique;
+}
+
+#entryContent {
+    margin: 1em 1em 1em 1em;
+}
+
+#entryTerms {
+    font-size: smaller;
+}
+
+#entryCreated {
+    font-size: x-small;
+}
+
+pre {
+    white-space: pre-line;
+    font-size: larger;
+}
+
+#xmlView {
+    margin: 1em 1em 1em 1em;
+    padding: 1em 1em 1em 1em;
+    font-size: small;
+}
+
+textarea.xfValue[cols] {
+    width: 30em;
+    height: 20em;
+}
+
+/* search result highlighting */
+.previous {
+    font-style: italic;
+}
+
+.hi {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.following {
+    font-style: italic;
+}
+
+/* printer specific */
+li.order {
+    list-style-type: none;
+}
+
+li.order h4 {
+    border-bottom: 1px dotted #999;
+}
+
+li.order .orderDescription {
+    font-size: 16px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+    font-weight: bold;
+    color: #28D500;
+}
+
+address {
+    font: 0.8em verdana, arial, sans-serif;
+    line-height: 170%;
+}
+
+address span {
+    display: block;
+}
+
+div.orderTitle {
+    margin-bottom: 0.5em;
+    border-bottom: 1px dotted #999;
+}
+
+div.orderTitle h4 {
+    display: inline;
+    border-bottom: none;
+}
+
+div.orderTitle a.viewLink{
+    margin-left: 2em;
+}
+
+#orderDetail div {
+    display: inline;
+}
+
+.orderDetailLabel {
+    font-weight: bold;
+}

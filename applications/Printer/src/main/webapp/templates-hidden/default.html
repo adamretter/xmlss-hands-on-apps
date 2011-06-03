@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en" xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" version="-//W3C//DTD XHTML 1.1//EN" xmlns:lift="http://liftweb.net/">
+    <head>
+        <link href="/css/ss_html.css" type="text/css" rel="stylesheet" />
+        <title>whatithink.com Printers</title>
+        <meta name="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="Content-Style-Type" content="text/css" />
+        <meta name="Content-Language" content="en" />
+        <meta name="DCTERMS.language" scheme="ISO 639-2/T" content="eng" />
+        <meta name="DCTERMS.format" content="text/html" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
+    </head>
+    
+    <!-- body>
+        <lift:bind name="content" />
+        <lift:Menu.builder />
+        <lift:msgs/>
+    </body -->
+     
+    <body>
+        <div id="wrapper">
+            <a href="./" title="whatithink.com Home">
+                <span id="header"/>
+            </a>
+            <div id="headerLinks"/>
+            <div id="lnavi">
+                <div id="leftMenu">
+                   <lift:Menu.builder />
+                   <ul>
+                       <li><a href="/order/list/current">Current Orders</a></li>
+                       <!-- li><a href="/order/list/dispatched?max=20">Recently Dispatched Orders</a></li -->
+                   </ul>
+                </div>
+                <div id="erasmus">
+                    <img src="/images/print_man.gif" alt="Erasmus Swift"/>
+                </div>
+            </div>
+            <div id="msgs"><lift:msgs/></div>
+            <div class="text_links" id="content"/>
+            <div id="contentFooter"/>
+            <div class="text_links" id="footer">
+                design <a title="Visit CSWi" href="http://www.cswi.co.uk">CSW informatics</a>|
+                validate <a title="Validate XHTML" href="http://validator.w3.org/check?uri=referer">XHTML</a>|
+                <a title="Validate CSS" href="http://jigsaw.w3.org/css-validator">CSS</a>
+            </div>
+        </div>
+    </body>
+    
+</html>

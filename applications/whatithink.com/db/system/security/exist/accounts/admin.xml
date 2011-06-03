@@ -1,0 +1,5 @@
+<account xmlns="http://exist-db.org/Configuration" id="1"><password>{MD5}1B2M2Y8AsgTpgAmY7PhCfg==</password>
+<!--<digestPassword></digestPassword>-->
+<!--<home></home>--><group name="dba"/>
+<!--<group name=""/>--><expired>false</expired><enabled>true</enabled>
+<!--<metadata></metadata>--><name>admin</name></account>

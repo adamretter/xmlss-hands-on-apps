@@ -1,0 +1,6 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/system" owner="SYSTEM" group="dba" mode="777" created="2011-05-02T11:28:10+02:00" version="1">
+    <subcollection name="config" filename="config"/>
+    <subcollection name="etc" filename="etc"/>
+    <subcollection name="plugins" filename="plugins"/>
+    <subcollection name="security" filename="security"/>
+</collection>

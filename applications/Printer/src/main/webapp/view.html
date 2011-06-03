@@ -1,0 +1,35 @@
+<div id="content" class="lift:surround?with=default&amp;at=content">
+    <h1>Welcome to Red Book admin... </h1>
+    
+    <h2>Review Order</h2>
+    
+    <div class="lift:ViewOrder">
+        <!-- span class="lift:embed?what=_current_orders"/ -->
+        
+        <ul>
+            <li class="order">
+                <div class="orderTitle">
+                    <h4>order Title</h4>
+                    <a class="dispatchLink" href="/dispatch/{lift:blah}">Dispatch Order</a>
+                    <span id="test_id"/>
+                </div>
+                <div id="orderDetail">
+                    <div>
+                        <span class="orderDetailLabel">Order Number:</span>&#160;<span id="orderNumber" class="orderDetailValue">orderNum</span>
+                    </div>
+                    <div>
+                        <span class="orderDetailLabel">Price:</span>&#160;£<span id="orderPrice" class="orderDetailValue">orderPrice</span>
+                    </div>
+                    <div>
+                        <span class="orderDetailLabel">Quantity:</span>&#160;<span id="orderQuantity" class="orderDetailValue">orderQty</span>
+                    </div>
+                    <div>
+                        <span class="orderDetailLabel">Dispatched:</span>&#160;<span id="orderDispatched" class="orderDetailValue">orderDispatched</span>
+                    </div>
+                </div>
+                <span class="orderDescription">order Description</span>
+                <address>order Address</address>
+            </li>
+        </ul>
+    </div>
+</div>

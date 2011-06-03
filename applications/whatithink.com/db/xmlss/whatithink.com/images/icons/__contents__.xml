@@ -1,0 +1,21 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/xmlss/whatithink.com/images/icons" owner="admin" group="dba" mode="755" created="2011-05-02T20:28:49+02:00" version="1">
+    <resource type="BinaryResource" name="arrow.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="arrow.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="arrow_grey.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="arrow_grey.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="atom.jpg" owner="admin" group="dba" mode="755" created="2011-06-02T13:35:23+02:00" modified="2011-06-02T13:35:23+02:00" filename="atom.jpg" mimetype="image/jpeg"/>
+    <resource type="BinaryResource" name="btn_add.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_add.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_addXML.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_addXML.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_add_entry.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_add_entry.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_browse.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_browse.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_clear_list.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_clear_list.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_create.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_create.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_create_pdf.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_create_pdf.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_delete.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_delete.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_go.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_go.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_order.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_order.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_order_book.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_order_book.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_register.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_register.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_search.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:50+02:00" modified="2011-05-02T12:04:50+02:00" filename="btn_search.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_send_order.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:51+02:00" modified="2011-05-02T12:04:51+02:00" filename="btn_send_order.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="btn_showXML.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:51+02:00" modified="2011-05-02T12:04:51+02:00" filename="btn_showXML.gif" mimetype="image/gif"/>
+    <resource type="BinaryResource" name="tick.gif" owner="admin" group="dba" mode="755" created="2011-05-02T12:04:51+02:00" modified="2011-05-02T12:04:51+02:00" filename="tick.gif" mimetype="image/gif"/>
+</collection>

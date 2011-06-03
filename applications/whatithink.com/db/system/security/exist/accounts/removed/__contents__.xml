@@ -1,0 +1,4 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/system/security/exist/accounts/removed" owner="SYSTEM" group="dba" mode="770" created="2011-05-02T11:28:10+02:00" version="1">
+    <resource type="XMLResource" name="71177dcd-5ec6-4d15-9fd9-a6ef64994225.xml" owner="SYSTEM" group="dba" mode="770" created="2011-05-02T20:54:20+02:00" modified="2011-05-02T20:54:20+02:00" filename="71177dcd-5ec6-4d15-9fd9-a6ef64994225.xml" mimetype="application/xml"/>
+    <resource type="XMLResource" name="f1309f96-b907-43aa-93ad-dd19c9ee652a.xml" owner="SYSTEM" group="dba" mode="770" created="2011-05-02T20:54:35+02:00" modified="2011-05-02T20:54:35+02:00" filename="f1309f96-b907-43aa-93ad-dd19c9ee652a.xml" mimetype="application/xml"/>
+</collection>

@@ -1,0 +1,3 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/xmlss" owner="guest" group="guest" mode="777" created="2011-05-02T11:43:07+02:00" version="1">
+    <subcollection name="whatithink.com" filename="whatithink.com"/>
+</collection>

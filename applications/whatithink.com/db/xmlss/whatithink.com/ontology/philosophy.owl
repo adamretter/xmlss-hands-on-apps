@@ -1,0 +1,103 @@
+<rdf:RDF xmlns="http://www.xmlsummerschool.com/ontologies/philosophy#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:phl100="http://www.wutsamada.com/cmu/phl100/" xmlns:aristotle="http://classics.mit.edu/aristotle/" xml:base="http://www.xmlsummerschool.com/ontologies/philosophy"><owl:Ontology rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     --><owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#compareTo --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be compared to the current concept</rdfs:comment><owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo"/><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be contrasted with the current concept</rdfs:comment><owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith"/><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#linkTo --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A generic link to another concept</rdfs:comment><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/><rdfs:range rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:ObjectProperty>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#references --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#references"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Another concept that is referenced in the definition of this concept</rdfs:comment><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be viewed as well as the current concept</rdfs:comment><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#description --><owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#description"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A human-readable description of the concept</rdfs:comment><rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#term --><owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#term"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The term describing this concept</rdfs:comment><rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing --><owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#Concept --><owl:Class rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"><rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/><rdfs:subClassOf><owl:Restriction><owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#description"/><owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality></owl:Restriction></rdfs:subClassOf><rdfs:subClassOf><owl:Restriction><owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#term"/><owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality></owl:Restriction></rdfs:subClassOf></owl:Class>
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#zombie --><ont:Concept xmlns:ont="http://www.xmlsummerschool.com/ontologies/philosophy#" rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/><ont:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Humanoid beings that behave like us and may share our functional organizations and even, perhaps, our neurophysiological makeups, but without qualia or subjective experiences.</ont:description><ont:term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zombies</ont:term></ont:Concept>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     --><rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Philosophy ontology created from "Larry Hauser's Mostly Modern Philosophical Glossary" at http://members.aol.com/lshauser2/lexicon.html for the XML Summer School</rdfs:comment></rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     --><rdf:Description><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/><owl:distinctMembers rdf:parseType="Collection"><rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie"/></owl:distinctMembers></rdf:Description></rdf:RDF><!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->

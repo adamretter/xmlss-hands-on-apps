@@ -1,0 +1,2 @@
+<group xmlns="http://exist-db.org/Configuration" id="1">
+<!--<manager name=""/>--><name>dba</name></group>

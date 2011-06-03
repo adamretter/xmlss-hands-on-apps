@@ -1,0 +1,28 @@
+<div id="content" class="lift:surround?with=default&amp;at=content">
+    <h1>Welcome to Red Book admin... </h1>
+    
+    <h2>Search Results</h2>
+    
+    <div class="lift:SearchCurrentOrders">
+    
+        <span class="lift:embed?what=_surname_search_form"/>
+
+        <!-- div>Searched for surname &quot;<lift:SearchCurrentOrders.surname/>&quot;&#160;found <span id="resultsCount"/> results.</div -->
+        <div>Searched for surname &quot;<span id="searchTerms"/>&quot;,&#160;found <span id="resultsCount"/> results.</div>
+
+        <ul>
+            <li class="order">
+                <div class="orderTitle">
+                    <h4>order Title</h4>
+                    <a class="viewLink" href="/view/{lift:blah}">View</a>
+                </div>
+                <span class="orderDescription">order Description</span>
+                <address>order Address</address>
+            </li>
+        </ul>
+        
+        <!-- span class="lift:embed?what=_current_orders;eager_eval=true"/ -->
+    
+    </div>
+    
+</div>

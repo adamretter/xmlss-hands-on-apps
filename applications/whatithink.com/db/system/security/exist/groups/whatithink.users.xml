@@ -1,0 +1,2 @@
+<group xmlns="http://exist-db.org/Configuration" id="4">
+<!--<manager name=""/>--><name>whatithink.users</name></group>
