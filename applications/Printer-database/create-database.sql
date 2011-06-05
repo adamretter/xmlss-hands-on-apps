@@ -1,8 +1,5 @@
-create database xmlss_printer
-GO
+CREATE DATABASE xmlss_printer;
 
-CREATE USER 'xmlss_printer'@'localhost' IDENTIFIED BY 'xmlss_printer'
-GO
+CREATE USER 'xmlss_printer'@'localhost' IDENTIFIED BY 'xmlss_printer';
 
-GRANT ALL ON xmlss_printer.* TO 'xmlss_printer'@'localhost'
-GO
+GRANT ALL ON xmlss_printer.* TO 'xmlss_printer'@'localhost';
