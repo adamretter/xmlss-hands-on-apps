@@ -18,6 +18,6 @@ declare variable $config:wit-collection := fn:concat($config:db-root-collection,
 declare variable $config:wit-users-collection := fn:concat($config:wit-collection, "/users");
 declare variable $config:wit-ontology-collection := fn:concat($config:wit-collection, "/ontology");
 
-declare variable $config:printer-webapp-address := xs:anyURI("http://localhost:9090/Printer/");
+declare variable $config:printer-webapp-address := xs:anyURI("http://localhost:9090/");
 declare variable $config:printer-webapp-restful-order-uri := xs:anyURI(fn:concat($config:printer-webapp-address, "/order"));
 declare variable $config:printer-webapp-restful-order-status-uri := xs:anyURI(fn:concat($config:printer-webapp-restful-order-uri, "/status")); 
