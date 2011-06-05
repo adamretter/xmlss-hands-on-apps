@@ -38,8 +38,8 @@ object DBVendor extends ConnectionManager {
     val cpds = new ComboPooledDataSource()
     cpds.setDriverClass("com.mysql.jdbc.Driver") //loads the jdbc driver
     cpds.setJdbcUrl("jdbc:mysql://localhost:3306/xmlss_printer")
-    cpds.setUser("root")
-    cpds.setPassword("")
+    cpds.setUser("xmlss_printer")
+    cpds.setPassword("xmlss_printer")
 
     // the settings below are optional -- c3p0 can work with defaults
     cpds.setMinPoolSize(5)
