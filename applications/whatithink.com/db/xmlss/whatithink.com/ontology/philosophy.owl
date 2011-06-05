@@ -1,4 +1,25 @@
-<rdf:RDF xmlns="http://www.xmlsummerschool.com/ontologies/philosophy#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:phl100="http://www.wutsamada.com/cmu/phl100/" xmlns:aristotle="http://classics.mit.edu/aristotle/" xml:base="http://www.xmlsummerschool.com/ontologies/philosophy"><owl:Ontology rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy"/>
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY aristotle "http://classics.mit.edu/aristotle/" >
+    <!ENTITY phl100 "http://www.wutsamada.com/cmu/phl100/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.xmlsummerschool.com/ontologies/philosophy#"
+     xml:base="http://www.xmlsummerschool.com/ontologies/philosophy"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:phl100="http://www.wutsamada.com/cmu/phl100/"
+     xmlns:aristotle="http://classics.mit.edu/aristotle/">
+    <owl:Ontology rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy"/>
     
 
 
@@ -8,7 +29,9 @@
     // Annotation properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     --><owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
     
 
 
@@ -23,23 +46,53 @@
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#compareTo --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be compared to the current concept</rdfs:comment><owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo"/><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#compareTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A link to a concept that should be compared to the current concept</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#compareTo"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be contrasted with the current concept</rdfs:comment><owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith"/><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A link to a concept that should be contrasted with the current concept</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contrastWith"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#linkTo --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A generic link to another concept</rdfs:comment><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/><rdfs:range rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:ObjectProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#linkTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo">
+        <rdfs:comment rdf:datatype="&xsd;string">A generic link to another concept</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/>
+        <rdfs:range rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#references --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#references"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Another concept that is referenced in the definition of this concept</rdfs:comment><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#references -->
+
+    <owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#references">
+        <rdfs:comment rdf:datatype="&xsd;string">Another concept that is referenced in the definition of this concept</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso --><owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A link to a concept that should be viewed as well as the current concept</rdfs:comment><rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/></owl:ObjectProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso -->
+
+    <owl:ObjectProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#seeAlso">
+        <rdfs:comment rdf:datatype="&xsd;string">A link to a concept that should be viewed as well as the current concept</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#linkTo"/>
+    </owl:ObjectProperty>
     
 
 
@@ -54,11 +107,23 @@
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#description --><owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#description"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A human-readable description of the concept</rdfs:comment><rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:DatatypeProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#description">
+        <rdfs:comment rdf:datatype="&xsd;string">A human-readable description of the concept</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#term --><owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#term"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The term describing this concept</rdfs:comment><rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/><rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/></owl:DatatypeProperty>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#term -->
+
+    <owl:DatatypeProperty rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#term">
+        <rdfs:comment rdf:datatype="&xsd;string">The term describing this concept</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -73,14 +138,2101 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#Thing --><owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
     
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#Concept --><owl:Class rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#Concept"><rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/><rdfs:subClassOf><owl:Restriction><owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#description"/><owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality></owl:Restriction></rdfs:subClassOf><rdfs:subClassOf><owl:Restriction><owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#term"/><owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality></owl:Restriction></rdfs:subClassOf></owl:Class>
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#Concept -->
+
+    <owl:Class rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#Concept">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#description"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#term"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
 
 
-    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#zombie --><ont:Concept xmlns:ont="http://www.xmlsummerschool.com/ontologies/philosophy#" rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie"><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/><ont:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Humanoid beings that behave like us and may share our functional organizations and even, perhaps, our neurophysiological makeups, but without qualia or subjective experiences.</ont:description><ont:term rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zombies</ont:term></ont:Concept>
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://classics.mit.edu/aristotle/categories.html -->
+
+    <owl:NamedIndividual rdf:about="&aristotle;categories.html"/>
+    
+
+
+    <!-- http://www.wutsamada.com/cmu/phl100/jtbknow.htm -->
+
+    <owl:NamedIndividual rdf:about="&phl100;jtbknow.htm"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Based on or derived from (in the sense of being justified by) sensory experience, referring to knowledge or justification that is (or hypotheses that are) empirical . Cosmological and teleological arguments for the existence of God are deemed a posteriori . Compare a priori .</description>
+        <term rdf:datatype="&xsd;string">a posteriori</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cosmological_argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#empirical"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#teleological_argument"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#a_priori -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">a priori</term>
+        <description rdf:datatype="&xsd;string">acquired by the mind or reasoning alone independently of (in the sense of not being justified by) sense experience, referring to knowledge or justification or hypotheses such as those of arithmetic and logic. (That 2+2=4 and that all equilateral triangles are equiangular may be suggested by sensory experience but their justification or mathematical proof in no way invokes this experience.) Traditionally, some a priori truths (axioms or first principles) are held to be directly intuited; the rest are supposed to be deducible from these. Euclid&#39;s geometry provides the model for this traditional conception. With a posteriori knowledge or statements, on the other hand, justification does invoke sensory experience either directly via perception or indirectly via induction . The ontological argument for the existence of God is deemed a priori .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ontological_argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#accident -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#accident">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A property or attribute that a (type of) thing or substance can either have or lack while still remaining the same (type of) thing or substance. For instance, I can either be sitting or standing , shod or unshod , and still be me (i.e., one and the same human being). Contrast: essence .</description>
+        <term rdf:datatype="&xsd;string">Accident</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#essence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#substance"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#actual -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#actual">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Actual</term>
+        <description rdf:datatype="&xsd;string">What really is the case, as opposed to what&#39;s possible (could be the case) and to what&#39;s necessary (must be the case); all of which are opposed to what&#39;s impossible (can&#39;t be the case). Concerning the latter &quot;opposition&quot;: the categories possible and impossible are jointly exhaustive (everything is either one or the other). Concerning the former &quot;opposition&quot;: necessity , actuality , and possibility are not mutually exclusive: everything necessary is also actual (what must be the case is the case) and everything actual is possible (whatever is is possible ). In other words, necessity entails actuality , and actuality entails possibility . (Also see contingent. )</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contingent"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#impossible"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#possible"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#aesthetic -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aesthetic">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Aesthetic</term>
+        <description rdf:datatype="&xsd;string">Pertaining to art and to beauty or artistic value.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#aesthetics -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aesthetics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Aesthetics</term>
+        <description rdf:datatype="&xsd;string">The philosophy of art. The study or contemplation or appreciation of the (nature of) artistic value or beauty.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#affirmative_action -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#affirmative_action">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A policy seeking to compensate victims of previous racial and sexual discrimination, to remedy lingering effects of such discrimination, or to combat ongoing institutionalized and unintentional discriminatory practices by providing reverse preferences favoring members of classes previously disadvantaged.</description>
+        <term rdf:datatype="&xsd;string">Affirmative Action</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#alienation -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#alienation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Alienation</term>
+        <description rdf:datatype="&xsd;string">Communist term for the characteristic dissociation of wage laborers ( proletarians ) both from the product of their labor (which the capitalist owner of the means and forces of production expropriates) and the labor process (which the capitalist owner controls and dictates) under the capitalist system of production, .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#capitalism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#communism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#proletarian"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#analytic -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#analytic">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Analytic</term>
+        <description rdf:datatype="&xsd;string">true by definition, or the denial of which would lead to a contradiction. Statements such as &quot;All triangles have three angles&quot; and &quot;No bachelors are married,&quot; are examples of sentences commonly deemed analytic. Contrast term: synthetic . Kant coined this terminology and stressed this distinction. Many contemporary analytic philosophers, following Quine, deny its cogency.</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#synthetic"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#anarchism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#anarchism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Anarchism</term>
+        <description rdf:datatype="&xsd;string">Political theory which denies the moral legitimacy of all forms of government and advocates the complete abolition of it.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#apperception -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#apperception">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">According to Leibniz and Kant: the mind&#39;s self-reflective awareness of its own thoughts. Compare: reflection .</description>
+        <term rdf:datatype="&xsd;string">Apperception</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reflection"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#argument -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#argument">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Argument</term>
+        <description rdf:datatype="&xsd;string">a set of statements (the premises ) offered in support of another statement (the conclusion ). Arguments are either inductive or deductive . See also syllogism .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#conclusion"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#deduction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#syllogism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#argument_from_evil -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#argument_from_evil">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Argument from evil</term>
+        <description rdf:datatype="&xsd;string">Argument from the existence of evil to the nonexistence of an omnipotent and omniscient and perfectly benevolent being such as God is supposed to be. Since evil exists, it&#39;s argued, either God can&#39;t prevent it (and so, is not omnipotent ) or doesn&#39;t know about it (and so, is not omniscient ) or doesn&#39;t wish to remove it (and so, is not perfectly benevolent ). Contrast: teleological argument .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#aristocracy -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aristocracy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Aristocracy</term>
+        <description rdf:datatype="&xsd;string">Political theory that advocates the rule of &quot;the best&quot; whom it identifies, generally, with a hereditary upper class. Contrast: autocracy , democracy , oligarchy .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#autocracy"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#democracy"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#oligarchy"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#association -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#association">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Association of ideas (laws of association)</term>
+        <description rdf:datatype="&xsd;string">The principles by which the mind connects ideas. Hume held the basic laws to be resemblance, closeness in time or place, and causality.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#atomism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#atomism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Atomism</term>
+        <description rdf:datatype="&xsd;string">The theory that reality is composed of simple and indivisible units (atoms) that are completely separate from and independent of one another. Democritus is the most notable ancient atomist. According to Leibniz monads are &quot;the true atoms.&quot; Locke&#39;s corpuscular hypothesis is also a version of Atomism.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#attribute -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#attribute">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Attribute</term>
+        <description rdf:datatype="&xsd;string">a feature or characteristic or property of something - as opposed to the thing or substance having the attribute, in which the attribute inheres .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#property"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#substance"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#autocracy -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#autocracy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Autocracy</term>
+        <description rdf:datatype="&xsd;string">One person rule. Where the rulership is hereditary, the government in question is a &quot;monarchy&quot;; where nonhereditary, a &quot;dictatorship.&quot; Contrast: democracy .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#democracy"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#bourgeios -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#bourgeios">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Bourgeois ( pl Bourgeoisie))</term>
+        <description rdf:datatype="&xsd;string">In its original designation the term referred to the medieval &quot;middle class&quot; of shopkeepers and artisans. In Communist theory it refers to the capitalist class of owners of the means and forces of production which, as Marx recounts, is historically descended from this medieval middle class. Contrast: proletarian . See: communism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#communism"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#proletarian"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#capitalism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#capitalism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Capitalism</term>
+        <description rdf:datatype="&xsd;string">Form of economic organization based on the private ownership of the means and forces of production in an industrial economy. The historical successor of feudalism (a system of private ownership of the means and forces of agricultural production) and, according to Karl Marx, destined to be succeeded by communism (a system of public ownership of the forces and means of industrial production).</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#communism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cartesianism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cartesianism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Cartesianism</term>
+        <description rdf:datatype="&xsd;string">The views of Descartes and his followers or views similar thereto - especially dualistic views. See also dualism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An absolute unconditional command, allowing no exceptions. The commands of morality, according to Kant, are all of this type and are all derivable from a single root imperative -- the Categorical Imperative -- akin to the Biblical golden rule (&quot;Do unto others as you would have them do unto you&quot;). Kant gives two seemingly different formulations of this basic Categorical Imperative. The first formulation says, &quot;Act only on that maxim through which you can at the same time will that it should become universal law&quot; (see maxim ). This first formulation speaks more directly to justice , disallowing self-interested favoritism: it deems only those maxims you&#39;d be willing for everyone (not just yourself) to act on to be morally acceptable; those you would be willing to universalize . The second formulation says, &quot;Act in such a way that you always treat humanity, whether in your own person or in the person of any other, never simply as a means, but always at the same time as an end.&quot; In this second formulation the appeal seems to be more directly to rights , specifically a right of autonomy or self-determination. What it forbids is using others without their informed consent to achieve one&#39;s owns purposes . Whether these two formulations are really equivalent -- just saying the same thing in other words -- as Kant maintains, is controversial. Contrast: hypothetical imperative .</description>
+        <term rdf:datatype="&xsd;string">Categorical Imperative</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_imperative"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#maxim"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#category -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#category">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Category</term>
+        <description rdf:datatype="&xsd;string">a concept under with, or in accord with which, our understanding and experience of reality are organized or structured. In philosophy the term &quot;category&quot; is commonly reserved for just the most basic among these structuring or organizing concepts. According to Aristotle a few fundamental Categories structure both thought and reality. In conception, they are archetypes of thought; in concretion, they are the archetypes of existence. In The Categories , Aristotle names ten: Substance, Quality, Quantity, Relation, Where, When, Position, Possession, Action, and Passion. Immanuel Kant&#39;s Categories structure or express the types of judgment by which minds unite their thoughts and experience into a single awareness or conception: things are only thinkable and experiencable phenomena insofar as they answer to these Categories. Kant specifies 12 Categories under four headings : Quantity (Unity, Plurality, &amp; Totality); Quality (Reality, Negation, &amp; Limitation); Relation (Inherence-Subsistence, Cause-Effect, &amp; Community (reciprocity between the agent and patient)); and Modality (Possibility-Impossibility, Existence-Nonexistence, Necessity-Contingence).</description>
+        <references rdf:resource="&aristotle;categories.html"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#catharsis -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#catharsis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Catharsis</term>
+        <description rdf:datatype="&xsd;string">Purging of the emotions (of pity and fear in particular) which, according to Aristotle, is a beneficial psychological effect had by art (of tragic drama in particular).</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cause -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cause">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Cause</term>
+        <description rdf:datatype="&xsd;string">Whatever is responsible for changes (including the creation and destruction) of things. According to Aristotle causes fall into four types: material cause , the substance a thing is made of; formal cause , the structure or design of the thing; efficient cause , the maker or instigator of the change; and final cause, the purpose or function of it (see teleology ). Hume argued that all knowledge of causation comes from our actual experience of observed regularities and includes no real knowledge of any objectively necessary connection. See determinism , scientific law .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#teleology"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#censorship -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#censorship">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Censorship</term>
+        <description rdf:datatype="&xsd;string">Legal or social practices aiming to bar the creation or dissemination (e.g., the publication or public display) of disapproved forms of artistic expression.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#co-option -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#co-option">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Being assimilated. Especially, for Herbert Marcuse, the socio-polictico-economic assimilation of works of art -- and simultaneous perversion of their liberating tendencies -- for commercial and control purposes.</description>
+        <term rdf:datatype="&xsd;string">Co-option</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cogito -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cogito">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Cogito argument</term>
+        <description rdf:datatype="&xsd;string">This argument of Descartes gets its name from the concluding phrase of his first formulation of it (in his Discourse on Method) -- cogito ergo sum, &quot;I think therefore I am.&quot; In his Meditations on First Philosophy Descartes concludes from the impossibility of doubting his own existence as thinking &quot;that this proposition: I am, I exist, is necessarily true each time I pronounce it, or that I mentally conceive it&quot; (2nd Meditation); my existence as a thinker is thereby assured. This assurance, Descartes thinks, can provide a secure foundation for all scientific knowledge. See also: method of doubt .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#method_of_doubt"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cogsci -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cogsci">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Cognitive Science</term>
+        <description rdf:datatype="&xsd;string">Cognitive Science: an interdisciplinary program proposing to explain such thought processes as belief-formation, inference, and memory, as species of computation (see computationalism ). The central disciplines involved are computer science, psychology, linguistics, and philosophy.</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#computationalism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#coherence -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#coherence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Coherence</term>
+        <description rdf:datatype="&xsd;string">Coherence: Agreement among thoughts or assertions. Coherence theories of truth that holds that truth consists in the agreement of thoughts (or assertions) among themselves, not their agreement with thought-independent (or language-independent) realities they are supposed to refer to or denote . Contrast correspondence .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#correspondence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#denotation"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#communism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#communism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Communism</term>
+        <description rdf:datatype="&xsd;string">Theory of political and economic development proposed by Karl Marx and developed and implemented by V. I. Lenin. In Marxist theory, &quot;communism&quot; denotes the final stage of human historical development in which the people rule both politically (compare: democracy ) and economically (contrast: capitalism ). Since the government, according to Marxist theory, is essentially an instrument of class oppression, and the society which emerges in this final stage is classless, as this final state is approaches government will gradually wither away (compare: anarchism ). See: proletarian , bourgeois .</description>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#anarchism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#bourgeios"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#capitalism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#democracy"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#proletarian"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#compatibilism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#compatibilism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Also known as &quot;soft determinism&quot; and most famously championed by Hume, this theory holds that free will and determinism are compatible. Properly understood, according to Hume, freedom is not an absolute ability to have chosen differently under exactly the same inner and outer circumstances. Rather it is a hypothetical ability to have chosen differently if one had been differently psychologically disposed by some different beliefs or desires. Alternately, Hume maintains that free acts are not uncaused (or mysteriously self-caused as Kant would have it) but caused in the right way, i.e., by our choices as determined by our our beliefs and desires, by our characters. See determinism . Contrast: hard determinism , libertarianism .</description>
+        <term rdf:datatype="&xsd;string">Compatibilism</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hard_determinism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#libertarianism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#computationalism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#computationalism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Computationalism</term>
+        <description rdf:datatype="&xsd;string">Computationalism: The hypothesis that the brain is a computer and thought is computation. See cognitive science . .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cogsci"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#concept -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#concept">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Concept</term>
+        <description rdf:datatype="&xsd;string">The mental correlate or idea associated with a general word (or predicate ) or with a general attribute or universal , e.g., the concept dog is associated with the word &quot;dog&quot; in the minds of English speakers, with the word &quot;chien&quot; in the minds of French speakers, and with the attribute doghood .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#conceptualism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#conceptualism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Conceptualism</term>
+        <description rdf:datatype="&xsd;string">The theory that universals are general ideas, such as the idea of man or of redness, which exist in minds and only in minds. This view is typically contrasted with -- and held as a kind of compromise between -- nominalism and realism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#realism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#conclusion -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#conclusion">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Conclusion</term>
+        <description rdf:datatype="&xsd;string">In an argument , a statement that is claimed to logically follow from supporting statements, or premises .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#logic"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#confirmed -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Confirmation</term>
+        <description rdf:datatype="&xsd;string">Inductive support by observed evidence.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#observation"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#connotation -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#connotation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Connotation</term>
+        <description rdf:datatype="&xsd;string">Connotation: J. S. Mill&#39;s word for the sense of a word or other expression (the definition or associated description in virtue of which the expression picks out what in the world it does) and the reference , or denotation (in Mill&#39;s terms), of the expression.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#denotation"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#sense"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#consciousness_objection -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#consciousness_objection">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An objection to materialism that maintains that, since mentality is fundamentally conscious and consciousness cannot be materialistically explained or reduced, mentality is something (a property or substance) that is fundamentally immaterial. Also, an objection to artificial intelligence that maintains that, since consciousness cannot be mechanically (or computationally) generated, that machines (or computers) cannot think.</description>
+        <term rdf:datatype="&xsd;string">Consciousness objection</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#materialism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#contingent -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contingent">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A property of statements or thoughts whose truth or falsity depends on matters of fact or circumstance; also of matters of fact whose existence depends on other matters or fact or circumstance. What is neither logically necessary nor logically impossible is contingent.</description>
+        <term rdf:datatype="&xsd;string">Contingent</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#impossible"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#contradiction -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contradiction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A fundamental logical principle, first formulated by Aristotle, which maintains that one and the same proposition (or thought or statement) cannot be both true and false or that a statement and its denial or contradictory cannot both be true. Sometimes called the &quot;Law of non-contradiction.&quot; Contrast: Excluded Middle .</description>
+        <term rdf:datatype="&xsd;string">Contradiction, Law of</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#excluded_middle"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#correspondence -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#correspondence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Correspondence</term>
+        <description rdf:datatype="&xsd;string">The relation between thoughts (or statements) and the independent realities that they supposedly refer to or denote . The correspondence theory of truth holds that standing in this relation to their referents is what makes thoughts (or statements) true. As Aristotle famously put it, &quot;To say of what is that it is not, or of what is not that it is, is false, while to say of what is that it is, and of what is not that it is not, is true.&quot; ( Metaphysics , 1011b) Contrast coherence .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#coherence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#denotation"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cosmological_argument -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cosmological_argument">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Arguments purporting to prove the existence of God a posteriori from the fact of the existence of the universe or of certain properties of the universe. Aquinas&#39; &quot;five ways&quot; include arguments from the existence of, the efficient causal order of, and the motion of the universe, to the existence of a first cause thereof, which he identifies with God.</description>
+        <term rdf:datatype="&xsd;string">Cosmological arguments</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#cultural_relativism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cultural_relativism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Cultural relativism</term>
+        <description rdf:datatype="&xsd;string">Moral theory that holds that what&#39;s good or bad or right or wrong varies from society to society depending on what each society says to be, or believes to be, good or bad or right or wrong. See ethical relativism . Compare subjectivism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjectivism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#deduction -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#deduction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Deduction</term>
+        <description rdf:datatype="&xsd;string">Reasoning in which the premises, if true, guarantee the truth of the conclusion. Example, &quot;All cats are mortal; Bill is a cat; therefore, Bill is mortal.&quot; Not all deduction is &quot;from general to particular,&quot; as is sometimes said. Nevertheless, the deduction of predictions of particular observable events from general hypotheses in order to test the hypotheses, is scientifically quite central. Contrast: induction . See also: logic , hypothetical deductive method .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_deductive_method"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#logic"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#democracy -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#democracy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Democracy</term>
+        <description rdf:datatype="&xsd;string">Form of government in which the people rule, either by directly voting on issues (direct democracy), or indirectly through electing representative to decide issues (representative democracy).</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#denotation -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#denotation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Denotation</term>
+        <description rdf:datatype="&xsd;string">Denotation: J. S. Mill&#39;s term for the reference of a word or linguistic expression as opposed to its sense or, in Mill&#39;s terms, it&#39;s connotation .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#connotation"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#determinism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#determinism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Determinism</term>
+        <description rdf:datatype="&xsd;string">The view that every event has a cause and that everything in the universe is governed by causal laws. Since determinists believe that all events, including human actions, are predetermined, determinism is thought by &quot;libertarians&quot; and &quot;hard determinists&quot; to be incompatible with free will . Hard determinists deny there is free will on the grounds that everything is causally determined. Libertarians deny that everything is causally determined on the grounds that there is free will. So-called &quot;soft determinists&quot; follow Hume in holding determinism and free will (rightly understood) are compatible : free acts are not uncaused on compatibilist conceptions of freedom, they&#39;re just caused in the right way , by the agents beliefs and desires. See compatibilism .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cause"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#compatibilism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#free_will"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#dualism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#dualism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Any philosophical theory holding that the universe consists of, or can only be explained by, two independent and separate constituents or substances; according to Cartesian dualism , these are mind (thinking substance) &amp; body (extended substance). Contrast: monism . Compare: pluralism .</description>
+        <term rdf:datatype="&xsd;string">Dualism</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#monism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#pluralism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#duty -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#duty">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Duty</term>
+        <description rdf:datatype="&xsd;string">What an individual is obliged to, or ought to do. If an individual has a duty to do X it is not permissible for them not to do X; and if they have a duty not to do X then it is not permissible for them to do it. Kant believed the commands of morality, being categorical, create perfect duties allowing no exceptions. Nonmoral imperatives, on the other hand, being hypothetical, create imperfect duties which allow of exceptions. See categorical imperative , hypothetical imperative .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_imperative"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#empirical -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#empirical">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Based on experience, or observation -- describing knowledge derived from or warranted by sense perception. Compare: a posteriori . Contrast: a priori .</description>
+        <term rdf:datatype="&xsd;string">Empirical</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#empiricism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#empiricism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Empiricism</term>
+        <description rdf:datatype="&xsd;string">The view that all ideas, and all knowledge of the world derives solely from sensory experience or perception ; denying the existence of innate ideas in opposition to rationalism .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#innate_ideas"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#rationalism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#end -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#end">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">End</term>
+        <description rdf:datatype="&xsd;string">That which is sought, or the object of pursuit. Aristotle maintains that all our pursuits aim ultimately at ends that are sought or desired intrinsically , i.e. for their own sakes, and that the greatest of these intrinsic goods is happiness . Things sought not for their own sake but for the sake of something else are desired extrinsically or instrumentally, as means .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#means"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#epistemology -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#epistemology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Epistemology</term>
+        <description rdf:datatype="&xsd;string">The theory of knowledge or branch of philosophy that studies how knowledge is gained, how much we can know, and what justification there is for what is known.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#essence -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#essence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Essence</term>
+        <description rdf:datatype="&xsd;string">The attribute or attributes that make a specific thing or substance what it is and not something else; its nature; that without which it would not be one and the same (type of) individual it is. For instance, I can cease sitting or being shod and still be one and the same human being; but I can&#39;t cease being alive and still be the same human being. Contrast: accident .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#accident"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Ethical relativism</term>
+        <description rdf:datatype="&xsd;string">The view that what is morally permissible, obligatory, and forbidden differs among individuals or between cultures. According to ethical relativism nothing is absolutely good or bad or right or wrong : rather, relativists hold, what is right or wrong is so for a given individual or within a given culture or society: the underlying idea is that the individual or society&#39;s judging things right or wrong or good or evil makes them so for that individual or society. See cultural relativism , subjectivism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cultural_relativism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjectivism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#ethics -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ethics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Ethics</term>
+        <description rdf:datatype="&xsd;string">The practices and principles constituting morally right conduct, and the philosophical study of these.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#euthanasia -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#euthanasia">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Euthanasia</term>
+        <description rdf:datatype="&xsd;string">Euthanasia: From Greek roots meaning &quot;good death&quot;: also known as &quot;mercy killing&quot;: the killing of persons for their own sake, generally to spare them from suffering. In active euthanasia the cause of death is an act committed (e.g., giving a lethal injection). In passive euthanasia death is due to an omission (e.g., &quot;failure&quot; to hydrate or resuscitate). The difference is often characterized as that between killing and letting die. Voluntary euthanasia is the killing of those who are capable of giving consent who have given their informed consent . Nonvoluntary euthanasia is the killing of those who are incapable of giving consent (e.g., infants and the comatose).</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#informed_consent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#excluded_middle -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#excluded_middle">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Excluded Middle, Law of</term>
+        <description rdf:datatype="&xsd;string">Fundamental logical principle that maintains that every proposition (or thought or statement) is either true or false, or that for every statement, either it or its contradictory is true. Compare: Contradiction .</description>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contradiction"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#existentialism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#existentialism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Existentialism</term>
+        <description rdf:datatype="&xsd;string">Philosophical movement harking back to Kierkegaard and flowering most notably in the work of Sartre and Heidegger in the mid twentieth century. It maintains, roughly, that the thinking subjects existence precedes its essence, and that our subjective existence, as thinkers, consequently is radically free, cannot be objectively construed, and is consequently incapable of any objective scientific characterization. See also: objective , subjective .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjective"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#experiment -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#experiment">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A test or trial of a hypothesis -- especially a test or trial involving manipulations of variables in order to observe the results of these manipulations. See confirmation , hypothetical deductive method .</description>
+        <description rdf:datatype="&xsd;string">A trial or test of a scientific hypothesis or generalization by manipulation of environmental factors to observe whether what results agrees, or disagrees, with what the hypothesis predicts. See: hypothesis .</description>
+        <term rdf:datatype="&xsd;string">Experiment</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_deductive_method"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#falifiability -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#falifiability">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Falsifiability</term>
+        <description rdf:datatype="&xsd;string">The ability of a hypothesis to be refuted by empirical evidence contrary to its universal claim. Karl Popper&#39;s famously maintains that the falsifiability of scientific claims is what demarcates sciences (e.g., astronomy) from pseudo-sciences (e.g., astrology).</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#empirical"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universal"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#forms -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#forms">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">For Plato, the ideal Archetypes or patterns according to which all things are constructed. These are grasped by rational insight -- which Plato held to be a kind of recollection -- and not by sensory perception . The Forms, according to Plato, are intelligible realities which transcend the material world of sensible objects which somehow resemble or participate in them: they are ideals which material or sensible thing imitate or aspire to . For Aristotle forms or essences are immanent -- they are the inner aspiration or or principle of development in the thing itself.</description>
+        <term rdf:datatype="&xsd;string">Forms (or Ideas)</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#essence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#immanent"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#free_will -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#free_will">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Free will</term>
+        <description rdf:datatype="&xsd;string">Liberty of choice or self-determination. On the absolute or libertarian conception, free will is opposed absolutely to causal determination: given a situation, a person could simply have chosen and done otherwise than they did, unconditionally. Choices, on this conception, are uncaused or self-caused causings. On the compatibilist or hypothetical conception, free will is opposed to constraint; a person is free if they could have done otherwise if they&#39;d so chosen ; though our choices, like everything else, are effects of antecedent causes. On this conception free acts are not uncaused , they&#39;re just caused in the right way , by our own preferences and desires. Acting freely on this &quot;soft determinist&quot; view is doing what you want (because you want to). See also: determinism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#god -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#god">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">God</term>
+        <description rdf:datatype="&xsd;string">Omnipotent (all powerful), omniscient (all knowing), and perfectly benevolent creator of the universe. Conceived of as transcending the created universe (as in the Christian tradition) God is thought to exist prior to and beyond the universe which he created from nothing or ex nihilo . Conceived of as immanent (as on pantheistic and Stoic conceptions) God is in the universe (as its guiding spirit or logos ) and coextensive with it, not beyond it or prior to it.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#hard_determinism -->
+
+    <owl:NamedIndividual rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hard_determinism"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#hedonism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hedonism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Hedonism</term>
+        <description rdf:datatype="&xsd;string">The view held most famously by ancient Epicureans and certain modern Utilitarians (following Bentham) that identifies pleasure as the only end in itself or intrinsic good. See end .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#end"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#utilitarian"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Hypothesis</term>
+        <description rdf:datatype="&xsd;string">In science, a testable assertion -- especially a generalization or lawlike assertion, e.g., Newton&#39;s law of universal gravitation which states (in part) &quot;All bodies attract each other with a force inversely proportional to their distance.&quot; Hypotheses that survive testing come to be confirmed , whereupon they are provisionally accepted as scientific laws .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_deductive_method -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_deductive_method">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Hypothetical Deductive (or Experimental) Method</term>
+        <description rdf:datatype="&xsd;string">The scientific method of testing would-be laws ( hypotheses ) by making predictions of particular observable events, then observing whether the events turn out as predicted. If so, the hypothesis is confirmed . If not, the hypothesis is disconfirmed, or (some would say) refuted.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_imperative -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_imperative">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A command that applies, not unconditionally, but only under certain conditions, or given certain purposes. E.g., &quot;If you want to see a good movie rent The Big Lebowski &quot;: the command, here, to rent The Big Lebowski applies only on the condition that you want to see a good movie. Similarly, the command to change your oil frequently applies only if you want your car to last; the command to look both ways before crossing only applies if you seek a safe crossing; etc. According to Kant, nonmoral commandments are all of this hypothetical sort. Compare: categorical imperative .</description>
+        <term rdf:datatype="&xsd;string">Hypothetical Imperative</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#idealism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#idealism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Idealism</term>
+        <description rdf:datatype="&xsd;string">The view that reality is fundamentally mental; that there is just one kind of substance (mind) or phenomena (thought); there is no such thing as matter; what we take to be material things are really, at bottom, mental. On Berkeley&#39;s view their esse is percipi - their being is being perceived. Compare: monism . Contrast: dualism , materialism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#materialism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#monism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#ideas -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ideas">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Ideas</term>
+        <description rdf:datatype="&xsd;string">On Locke&#39;s conception ideas are the contents with which minds are &quot;furnished&quot; (as he puts it). From &quot;simple ideas&quot; (e.g., or red , of round , of sweet ) furnished by sense-perception the mind constructs &quot;complex ideas&quot; (e.g., of apple ). Conception being nothing but this compounding of sense-based ideas, and reasoning being nothing but transitioning between ideas thus compounded, all knowledge -- Locke maintains -- derives ultimately from sensory experience. See also: empiricism , impressions .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#empiricism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#impressions"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#imagination -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#imagination">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Imagination</term>
+        <description rdf:datatype="&xsd;string">In a technical sense, the faculty of forming mental images - particular sensations or impressions (Hume). Opposed to the intellect , the faculty of forming general concepts . In this broad, somewhat technical sense, imagination includes veridical perception as well as imagination proper (fantasy, dreams, etc.).</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#concept"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#immanent -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#immanent">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Immanent</term>
+        <description rdf:datatype="&xsd;string">Internal or indwelling as opposed to external or outdwelling: in particular, what is internal to the material, sensible world as opposed to what is above or beyond it, or transcendent . On pantheistic views (e.g., those of the Stoics or Spinoza) God is held to be an immanent guiding spirit in and of the sensible material world, not existing apart or beyond it. Orthodox Christian views, by contrast hold God be transcendent. Similarly, Plato asserts the transcendence while Aristotle maintains the immanence of the Forms or essences of things.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#essence"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#forms"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#immanent"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#pantheism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#impossible -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#impossible">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Impossible</term>
+        <description rdf:datatype="&xsd;string">What cannot be the case, under any circumstances, is impossible. What is logically impossible is self-contradictory; inconsistent with the basic principles of logic itself ( to be both human and nonhuman, e.g., is logically impossible). It is convenient for many purposes to recognize types of impossibility weaker than strict logical impossibility. Natural or nomological impossibility is the next strongest generally recognized type: what is nomologically impossible, while it may be logically consistent, is inconsistent with the laws of nature : e.g., it&#39;s nomologically impossible (current physics tells us) for anything to travel faster than the speed of light. Practical impossibility is a weaker variety yet: what is practically impossible may be consistent with the laws of nature, but is inconsistent given the circumstances; e.g., it&#39;s nomologically possible for a human being to run a four-minute mile but it&#39;s not practically possible for most of us (given our ages, physiques, and physical conditions) to do so. Contrast: possible . See also: necessary , contingent , actual .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#actual"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contingent"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#possible"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#impressions -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#impressions">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Hume terms the direct experiential deliverances of sensation impressions ; simple ideas, for Hume are faint copies (in memory) of these sensory impressions, and complex ideas (all the rest) are compounded from these simple ideas, much as they are for Locke. See also: empiricism , ideas .</description>
+        <term rdf:datatype="&xsd;string">Impressions</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#empiricism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ideas"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#indeterminism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#indeterminism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Indeterminism</term>
+        <description rdf:datatype="&xsd;string">The view that there are events that do not have any cause; believers in absolute free will, for instance, hold that choices are not determined by any physiological or psychological causes whatever. Contrast: determinism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#individuals -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#individuals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Also called particulars are single things (e.g., Socrates) as opposed to properties or kinds of things, or (humanity or humankind). The latter are universals . Individuals are typically the sorts of things named by proper names (e.g., &quot;Socrates&quot;) whereas universals are associated with general words such as verbs (e.g., &quot;teaches&quot;), common nouns (e.g., &quot;man&quot;), and adjectives (e.g., &quot;human&quot;).</description>
+        <term rdf:datatype="&xsd;string">Individuals</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universal"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#induction -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#induction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Induction</term>
+        <description rdf:datatype="&xsd;string">Reasoning or argumentation in which the truth of the premises does not guarantee the truth of the conclusion. Not all inductive reasoning &quot;goes from particular to general&quot; as is sometimes said. Though inductive generalization (of laws from particular instances) is, scientifically, perhaps the most important type of inductive reasoning (as stressed by Francis Bacon), reasoning from the past to future instances (i.e., from particulars to particulars) is also inductive and scientifically important; and there are other forms as well. Hume argued that induction has no rational or objective basis but only a subjective psychological one. Contrast: deduction . See also: logic .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#deduction"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#logic"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#rational"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reason"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjective"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#inference -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#inference">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Drawing conclusions on the basis or premises or evidence. Compare: argument .</description>
+        <term rdf:datatype="&xsd;string">Inference</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#informed_consent -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#informed_consent">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Informed Consent</term>
+        <description rdf:datatype="&xsd;string">Informed Consent: In medical ethics, the right of the patient to be informed of pertinent details, especially the risks, involved in any procedure and to decide for themselves, on the basis of this information, whether or not to undergo the procedure.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#inherence -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#inherence">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Inherence</term>
+        <description rdf:datatype="&xsd;string">The relation between individuals or particulars and their attributes or universals : when an individual has an attribute, the attribute is said to &quot;inhere&quot; in the the thing.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#innate_ideas -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#innate_ideas">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Ideas that are inborn rather than acquired through sensory experience. Socrates and Plato taught that such ideas were acquired by direct acquaintance (prior to birth) with the archetypes or Forms or according to which all things are constructed. Descartes, as well as other rationalists (in agreement with Plato) believe such &quot;clear and distinct&quot; innate ideas are the source of all real knowledge. Belief in innate ideas is the distinguishing feature of rationalism .</description>
+        <term rdf:datatype="&xsd;string">Innate ideas</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#rationalism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#instrumental -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#instrumental">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A feature of values or valued things which is extrinsic: had by things insofar as they are not desirable or commendable in and of themselves but rather for the sake of,. or as a means to, something else. Money (which gets its value from enabling us to purchase good) and medical treatment (which is valuable for the health it maintains or restores) are classic examples of extrinsic or instrumental goods. Contrast: intrinsic .</description>
+        <term rdf:datatype="&xsd;string">Instrumental</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#intrinsic"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#instrumentalism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#instrumentalism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Instrumentalism</term>
+        <description rdf:datatype="&xsd;string">View that holds that while scientific theories are predictively useful ways of talking, they should not be thought to provide true descriptions of reality. Perhaps the most famous avowal of instrumentalism was Copernicus&#39; advertisement of his heliocentric hypothesis as nothing more than an aid to astronomical calculation -- a predictive instrument, not purporting to be a true description of astronomical realities. Contrast scientific realism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_realism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#intrinsic -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#intrinsic">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A feature of values or valued things which is have value in and of themselves rather than on account of their consequences or (more generally) their relations to anything else. Things commonly accorded intrinsic value include pleasure, knowledge, beauty, and happiness. Contrast: instrumental . See: hedonism .</description>
+        <term rdf:datatype="&xsd;string">Intrinsic</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hedonism"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#instrumental"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#kitsch -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#kitsch">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Bad or inferior art, that is formulaic, trite or banal, expressing or evoking phony sentimentality instead of genuine feeling and unquestioning acceptance of the popular or orthodox opinion instead of genuine insight into underlying issues and realities.</description>
+        <term rdf:datatype="&xsd;string">Kitsch</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#knowledge -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#knowledge">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">As classically construed knowledge is justified true belief . Recent worries about the sufficiency of justification currently inspire attempts to appeal to &quot;external relations&quot; such as causation in justification&#39;s stead. (See my handout Knowledge as Justified True Belief for further brief discussion).</description>
+        <term rdf:datatype="&xsd;string">Knowledge</term>
+        <seeAlso rdf:resource="&phl100;jtbknow.htm"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#libertarianism -->
+
+    <owl:NamedIndividual rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#libertarianism"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#logic -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#logic">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">(1) correct reasoning or argumentation; (2) the study of the principles of correct reasoning. See: deduction , ind uction .</description>
+        <term rdf:datatype="&xsd;string">Logic</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#deduction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#materialism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#materialism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Materialism</term>
+        <description rdf:datatype="&xsd;string">The theory that holds that matter is the only fundamental substance. Spirits or minds either do not exist or are really, at bottom, manifestations of matter. Contrast: idealism , dualism . Compare: monism .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#idealism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#monism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#maxim -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#maxim">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An action guiding principle or policy, e.g., the carpenter&#39;s maxim, &quot;Measure twice, cut once.&quot; For Kant, all human actions are undertaken under the color of maxims, and the moral character of the act -- whether it&#39;s right or wrong -- depends on the universalizability or nonuniversalizability of the maxim under color of which it is undertaken. See categorical imperative .</description>
+        <term rdf:datatype="&xsd;string">Maxim</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#means -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#means">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An object (such as money) or activity (such as medical treatment) sought or pursued, not for it&#39;s own sake, but for the sake of something else (as money is sought for the things it can buy, and medical treatment undergone for the sake of health). Contrast: end .</description>
+        <term rdf:datatype="&xsd;string">Means</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#end"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#mechanism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#mechanism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Mechanism</term>
+        <description rdf:datatype="&xsd;string">Philosophical theory that denies &quot;action at a distance&quot; and holds, that natural systems, including living organisms, are complex machines. Descartes famously held this to be true of all nonhuman animals but not of human minds and their freely willed actions.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#free_will"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#metaphysics -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#metaphysics">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Metaphysics</term>
+        <description rdf:datatype="&xsd;string">The study of or branch of philosophy concerned with the ultimate nature of reality and with existence as a whole.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#method_of_doubt -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#method_of_doubt">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Method of Doubt</term>
+        <description rdf:datatype="&xsd;string">Method of doubting everything conceivably doubtful, proposed by Descartes, with the aim of discovering what -- if anything -- can be known indubitably, with absolute certainty. Descartes concludes that the &quot;Archimedean point&quot; of certainty he seeks can be found in his unshakable assurance of his own existence as a thinker. See also: cogito argument .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cogito"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#mind-body -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#mind-body">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A central problem of modern philosophy that originates with Descartes. It concerns how the mind and the body are related; especially, how they are able to causally interact as they would seem to do in perception and voluntary action. See also: dualism , idealism , materialism .</description>
+        <term rdf:datatype="&xsd;string">Mind-body problem</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#idealism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#materialism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#monad -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#monad">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">According to Leibniz, monads are the ultimate indivisible units or &quot;true atoms&quot; of all existence . Monads are not material: each monad is a self-activating, unique, center of &quot;purpose&quot; and &quot;perception.&quot; Monads cannot interact, but are in a &quot;preestablished harmony&quot; with each other, by the grace of God.</description>
+        <term rdf:datatype="&xsd;string">Monad</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#monism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#monism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Monism</term>
+        <description rdf:datatype="&xsd;string">The theory that everything in the universe is composed of, or can be explained by or reduced to, one fundamental (type of) substance, energy, or force. In the modern era materialists take this one thing to be matter; idealists take the one fundamental (type of) thing to be mind. Compare: mechanism . Contrast: pluralism , dualism .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#mechanism"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#pluralism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#natural_theology -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#natural_theology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Knowledge about God that can be obtained by natural means by the exercise of reason and sense perception . Contrast: revealed theology .</description>
+        <term rdf:datatype="&xsd;string">Natural Theology</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reason"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#revealed_theology"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#necessary -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#necessary">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Necessary</term>
+        <description rdf:datatype="&xsd;string">What must be the case, as opposed to the merely possible (what might be the case) and the merely actual (what is the case). On Leibniz&#39;s analysis, what&#39;s necessary is the case in all possible worlds: under this conception a statement or thought that describes such a necessary state of affairs is said to be &quot;true in all possible worlds.&quot;</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#actual"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#possible"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#nihilism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#nihilism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Nihilism</term>
+        <description rdf:datatype="&xsd;string">The view that moral value (goodness or rightness) and disvalue (badness or wrongness) do not exist. Contrast: ethical relativism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#nominalism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Nominalism</term>
+        <description rdf:datatype="&xsd;string">The view (held by Berkeley, among others) that general terms, such as &quot;table,&quot; do not express or refer to general concepts, abstract ideas, or any sort of really existing universals ; there are just individual words and the individual things they refer to.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#noumena -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#noumena">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">For Kant noumena or &quot;things-in-themselves&quot; are realities transcending all possible thought and experience. Since the Categories of thought do not apply to things-in-themselves but only &quot;things-for us&quot; or phenomena , knowledge is possible only of these phenomena.</description>
+        <term rdf:datatype="&xsd;string">Noumenon</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#category"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#phenomenon"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#objective -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#objective">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Objective</term>
+        <description rdf:datatype="&xsd;string">Pertaining to things independent of or external to thought and experience. Contrast: subjective .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjective"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#objective_truth -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#objective_truth">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Objective Truth</term>
+        <description rdf:datatype="&xsd;string">Objective truths are true regardless of what anyone thinks. Example: The earth revolves around the sun . This was true, a believer in objective truth would say, long before anyone thought so (the earth being long uninhabited) and even despite everyone thinking otherwise for a long time (prior to Copernicus, for millennia, virtually everyone thought the sun revolved around the earth).</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#obscenity -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#obscenity">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Artistic expression which appeals solely to prurient interests and is without redeeming artistic merit or social importance. (As defined under U. S. law.)</description>
+        <term rdf:datatype="&xsd;string">Obscenity</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#observation -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#observation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Determination of particular fact based on the evidence of the senses , i.e., by way of perception .</description>
+        <term rdf:datatype="&xsd;string">Observation</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#senses"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#ockhams_razor -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ockhams_razor">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A principle attributed to the fourteenth century English philosopher William of Occam that states that entities should not be multiplied beyond necessity. Similarly, one should choose the simplest of otherwise equally warranted (e.g., empirically supported) theories; the one requiring the fewest assumptions and principles.</description>
+        <term rdf:datatype="&xsd;string">Occam&#39;s razor</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#oligarchy -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#oligarchy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Oligarchy</term>
+        <description rdf:datatype="&xsd;string">Rule by the rich. Compare: aristocracy . Contrast: democracy .</description>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#aristocracy"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#democracy"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#ontological_argument -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ontological_argument">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Any argument that aims to prove that God exists a priori ; arguing that necessarily , &quot;God exists&quot; is true given what we mean by &quot;God&quot;, or that the Divine idea , or concept , or nature , or essence includes -- and hence guarantees -- God&#39;s existence. Descartes version of the argument goes roughly so: God is by definition, a perfect being; it&#39;s better to exist than not to exist; therefore, necessarily, God exists.</description>
+        <term rdf:datatype="&xsd;string">Ontological Argument</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#other_minds -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#other_minds">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Other minds problem</term>
+        <description rdf:datatype="&xsd;string">The problem of how we know that there are minds other than our own on the assumption that mental life consists, essentially, of private conscious experiences directly accessible only to oneself.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#pantheism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pantheism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Pantheism</term>
+        <description rdf:datatype="&xsd;string">The belief that God and the universe are identical; among modern philosophers, Spinoza is considered to be a pantheist. Among the ancients the Stoics were the most notable exponents of pantheism. According to Stoicism, the material universe is the Body of God, and the God&#39;s spirit or soul is the Mind (or logos ) guiding and governing this universal body. In effect, universal Body and indwelling Mind together comprise the divine Person.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#particulars -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#particulars">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Individual existents (e.g., Ben Franklin): as opposed to kinds (e.g., inventor) or attributes (e.g., inventiveness), which are universals .</description>
+        <term rdf:datatype="&xsd;string">Particulars</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#perceive -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#perceive">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Perceive</term>
+        <description rdf:datatype="&xsd;string">To detect or become aware of via the outward senses of sight, hearing, touch, taste, and smell, and also (according to the usage of some) via &quot;reflection&quot; (Locke) or introspection.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#phenomenon -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#phenomenon">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">For Kant, phenomena are &quot;things for us&quot; -- things-as-thought-and-experienced. Phenomena contrast with noumena -- the &quot;things in themselves&quot; -- which transcend our thought and conception.</description>
+        <term rdf:datatype="&xsd;string">Phenomenon</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#philosophy -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#philosophy">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Literally &quot;love of wisdom&quot;: the discipline that contemplates and seeks to critically illumine the ultimate grounds of being, knowledge, and value.</description>
+        <term rdf:datatype="&xsd;string">Philosophy</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#platonism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#platonism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Agreement with the views of Plato, especially with his assertion of the real existence of the &quot;ideas&quot; or &quot;Forms&quot;. See realism (Platonic) .</description>
+        <term rdf:datatype="&xsd;string">Platonism</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#realism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#pluralism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pluralism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Pluralism</term>
+        <description rdf:datatype="&xsd;string">The theory that reality is composed or can be explained in terms of two or more fundamental (types of) substance, energy, or force. In the modern era Cartesian dualism represents the most notable pluralist hypothesis. Among the ancients, the pluralism of Pythagoras and Democritus is usually contrasted to the monism of the Milesians (Thales, Anaximenes, Anaximander) and Eleatics (Parmenides, Miletus, Zeno).</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#monism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#possible -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#possible">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Possible</term>
+        <description rdf:datatype="&xsd;string">What might be the case, as opposed to what&#39;s necessary (what must be the case) and what&#39;s actual (what really is the case).</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#actual"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#pragmatism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pragmatism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A theory of meaning first proposed by Charles Sanders Peirce according to which &quot;the meaning of a concept is to be found in the practical outcomes of its adoption&quot; and &quot;what effects, which might have practical bearings, we conceive the object of our conception to have&quot; are &quot;the whole of our conception of the object.&quot; Pragmatist theories of knowledge and truth subsequently developed by William James, John Dewey and others are coherence theories in which beliefs are required to cohere, not just among themselves, but with practices.</description>
+        <term rdf:datatype="&xsd;string">Pragmatism</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#coherence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#knowledge"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#premise -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#premise">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Premise</term>
+        <description rdf:datatype="&xsd;string">Statement asserted in support of the conclusion of an argument .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#principle_of_contradiction -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#principle_of_contradiction">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Dating back to Aristotle, this basic logical principle or &quot;law of thought&quot; holds that a statement cannot simultaneously be both true and false or that nothing can at once both have an attribute , like redness, and lack it.</description>
+        <term rdf:datatype="&xsd;string">Principle (law) of (non)contradiction</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#proletarian -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#proletarian">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A worker or wage laborer under capitalism . Contrast: bourgeois . See: communism .</description>
+        <term rdf:datatype="&xsd;string">Proletarian</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#bourgeios"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#capitalism"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#communism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#property -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#property">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Property</term>
+        <description rdf:datatype="&xsd;string">a feature or characteristic or attribute of something - as opposed to the thing or substance having the property, in which the property inheres .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#substance"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#proposition -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#proposition">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Proposition</term>
+        <description rdf:datatype="&xsd;string">Proposition : The true or false content of a sentence utterance or inscription. Synonymous statements, whether in a single language (e.g., &quot;Cottonmouths are poisonous&quot; and &quot;Water Moccasins are poisonous&quot;) or in different languages (e.g., &quot;Snow is white&quot; and &quot;Le niege est blanc&quot;) are said to express the same proposition. Ambiguous sentences (e.g.,&quot;The bank is muddy&quot;) are said to express more than one proposition ( that a certain financial institution is muddy , and that a certain river shore is muddy ). Since propositions resemble Platonic universals in being abstract objects, nominalists disdain them.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#rational -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#rational">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Rational</term>
+        <description rdf:datatype="&xsd;string">respecting logical principles of validity and consistency and answering to the evidence of experience.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#rationalism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#rationalism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Rationalism</term>
+        <description rdf:datatype="&xsd;string">The philosophic approach that holds that reality is knowable by the use of reason or thinking alone, starting with innate ideas, without recourse to observation or experience.</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#realism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#realism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Realism (Platonic)</term>
+        <description rdf:datatype="&xsd;string">View that affirms the existence of universals . Extreme or Platonic realism holds that universals (&quot;forms&quot; or &quot;ideas&quot;) exist independently of both particular things and human minds. Moderate or Aristotelian realism holds that universals only exist as inhering in, or being instantiated by, particulars . Also see conceptualism . Contrast: nominalism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#conceptualism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#inherence"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#reason -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reason">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Reason</term>
+        <description rdf:datatype="&xsd;string">The power of grasping concepts and drawing inferences .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#concept"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#inference"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#reference -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reference">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Reference</term>
+        <description rdf:datatype="&xsd;string">the relation between a word or other linguistic expressions and what in the world the expression is about. Frege famously contrasts reference with sense (the associated definition or &quot;mode of presentation&quot; that makes the expressions refer to what it does). The word &quot;woman&quot;, for instance, has as its sense &quot;adult human female&quot;: everything answering to that description (i.e., all the adult human females) are the word&#39;s referents. See also denotation .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#denotation"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#sense"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#reflection -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reflection">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">According to Locke: the inner perception by which minds are aware of their own thoughts. See apperception .</description>
+        <term rdf:datatype="&xsd;string">Reflection</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#apperception"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#repression -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#repression">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Freudian mechanism by which unacceptable wishes and thoughts are banished from conscious awareness but continue to unconsciously and, thence, find expression in dreams and slips of the tongue, and sometimes in compulsive behavior, obsessive thoughts, and other forms of psychopathology. Herbert Marcuse distinguishes necessary repression (without which civilization could not exist) from surplus repression (which serves to maintain unnecessary forms of economic and political control and oppression). Compare: sublimation .</description>
+        <term rdf:datatype="&xsd;string">Repression</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#sublimation"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#revealed_theology -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#revealed_theology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Revealed theology</term>
+        <description rdf:datatype="&xsd;string">Truths about God that can only be revealed by supernatural means and cannot be discovered by the unaided exercise of reason and perception. Compare: natural theology .</description>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#natural_theology"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#romanticism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#romanticism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Artistic movement and philosophy of art opposed to neoclassicism and valuing subjective honesty or sincerity of emotional expression above adherence to formal constraints and objective standards of beauty or artistic correctness.</description>
+        <term rdf:datatype="&xsd;string">Romanticism</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#subjective"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A general scientific hypothesis that is true or (more weakly understood) well- confirmed or established. On realist conceptions the laws of science are generally regarded as expressing the causal laws according to which all occurs, or by which all is governed. See cause , determinism .</description>
+        <term rdf:datatype="&xsd;string">Scientific law</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cause"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_realism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#scientific_realism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_realism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Scientific realism</term>
+        <description rdf:datatype="&xsd;string">View that holds that reality really is as science describes it or as science ultimately would describe it at the ideal end-point of inquiry. Contrast: instrumentalism .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#instrumentalism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#scientific_theory -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_theory">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A logically closely interconnected set of scientific laws .</description>
+        <term rdf:datatype="&xsd;string">Scientific theory</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#sensations -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sensations">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Sensations</term>
+        <description rdf:datatype="&xsd;string">what we experience directly -- such as shapes, colors, and smells - in perceptual experience. Roughly identifiable, with Locke&#39;s &quot;simple ideas&quot; and Hume&#39;s &quot;impressions&quot;. For Kant these are the &quot;matter&quot; of perception for which time and space are the a priori forms. Among contemporary philosophers, sensations (or their distinctive &quot;felt&quot; properties) are commonly called &quot;qualia.&quot; Among the presumed contents of the mind, sensations (being concrete &amp; particular ) stand in contrast to (abstract &amp; general, or universal ) concepts: compare the experience of seeing red to the idea of redness.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#sense -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sense">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Sense</term>
+        <description rdf:datatype="&xsd;string">Sense: The definition or &quot;mode of presentation&quot; by which a word or other expression picks out or applies to whatever in the world it does. Frege famously contrasts sense with reference : the referents of an expression are the the actual things the expression picks out. Compare connotation.</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#senses -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#senses">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Metaphorically, &quot;the doors of perception&quot; ( Wm. Blake ): the input channels by which the mind is affected by the external world. Following Aristotle, traditionally, there are said to be five: taste, touch, smell, hearing, and sight. See perceive .</description>
+        <term rdf:datatype="&xsd;string">Senses</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#wmblake.html"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#skepticism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#skepticism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Skepticism</term>
+        <description rdf:datatype="&xsd;string">The philosophic theory that no knowledge can be attained either in general, or (more commonly) with regard to specific categories of presumed knowledge -e.g., Hume&#39;s skepticism about our knowledge of presumed necessary connections between things we judge to be causally related.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cause"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#social_constructivism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#social_constructivism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Social constructivism</term>
+        <description rdf:datatype="&xsd;string">View marked by its rejection of the objectivity of truth, generally, and of scientific truth in particular. Constructivists hold that scientific laws, descriptions, and even observations are social constructs -- products or projections of human cultures or communities. As such, they are thoroughly theory-laden and vary between cultures. Consequently scientific truth is neither objective nor universal . Contrast: objective truth . Compare theory laden , theory neutral .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective_truth"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#theory_laden"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#theory_neutral"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universal"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#social_contract -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#social_contract">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Implied covenant between individuals by which each foregoes certain freedoms (to prey on others) in exchange for certain rights (not to be preyed on) which social contract theorists (most notably Thomas Hobbes, John Locke, and Jean Jaycees Rousseau) propose the legitimacy of government derives. Contrast: anarchism .</description>
+        <term rdf:datatype="&xsd;string">Social contract</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#anarchism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#solipsism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#solipsism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Solipsism</term>
+        <description rdf:datatype="&xsd;string">The theory that one cannot know anything other than his or her own thoughts, feelings, or perceptions and, consequently, that we should deny - or a least strongly doubt - whether anything (such as other minds and material bodies) really exists outside our minds. See skepticism .</description>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#skepticism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#statement -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#statement">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Statement</term>
+        <description rdf:datatype="&xsd;string">Statement: The use of a sentence utterance or inscription to assert a proposition , or the proposition thus asserted.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#proposition"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#subjective -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#subjective">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Pertaining to thinking and experiencing or to things as thought and experienced. Contrast: objective .</description>
+        <term rdf:datatype="&xsd;string">Subjective</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#subjectivism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#subjectivism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Moral theory that holds that what&#39;s good or bad or right or wrong varies from individual to individual depending on what each individual believes to be, good or bad or right or wrong. See ethical relativism . Compare cultural relativism .</description>
+        <term rdf:datatype="&xsd;string">Subjectivism</term>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cultural_relativism"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#sublimation -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sublimation">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Sublimation</term>
+        <description rdf:datatype="&xsd;string">the redirection, according to Freud, of antisocial sexual and aggressive impulses into socially constructive activity. Compare: repression .</description>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#repression"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#substance -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#substance">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Substance</term>
+        <description rdf:datatype="&xsd;string">Technically (for Leibniz, Spinoza, Descartes, et. al.) - a self-subsistent entity or thing, not depending on anything (except, possibly God) for its existence: also, the ultimate bearer of attributes or properties. In a somewhat looser sense (closer to Aristotle&#39;s) &quot;substance&quot; is used to refer to the individuals which are the bearers of attributes or havers of properties as opposed to the attributes or properties - universals - that they have or which inhere in them.</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#inherence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#sufficient_reason -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sufficient_reason">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Principle formulated by Leibniz according to which, for whatever is the case, there is a sufficient reason why it is the case. Closely akin to this is the Law of Universal Causation, according to which every event has a cause. See also: Determinism .</description>
+        <term rdf:datatype="&xsd;string">Sufficient Reason</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#syllogism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#syllogism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An argument - usually deductive - having two premises and a single conclusion.</description>
+        <term rdf:datatype="&xsd;string">Syllogism</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#deduction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#synthetic -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#synthetic">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Synthetic</term>
+        <description rdf:datatype="&xsd;string">having factual or empirical content; i.e. not being true or false by definition. Contrast term: analytic .</description>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#analytic"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#empirical"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#teleological_argument -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#teleological_argument">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Also known as the &quot;argument from design&quot;, it argues from the observed well-designedness of the universe and the things in it to the existence of a supremely intelligent and powerful Designer, or God . Compare: cosmological argument , ontological argument . Contrast: argument from evil .</description>
+        <term rdf:datatype="&xsd;string">Teleological Argument</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument_from_evil"/>
+        <compareTo rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#cosmological_argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#ontological_argument"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#teleology -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#teleology">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Purpose or direction.</description>
+        <term rdf:datatype="&xsd;string">Teleology</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#theory_laden -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#theory_laden">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">The property of observations varying with, or depending upon, the theoretical commitments of the observer. Insofar as observations are theory laden, your beliefs -- as shaped by the theory or paradigm you accept -- determine what you observe, so that partisans of different theories (or paradigms) will observe differently.</description>
+        <term rdf:datatype="&xsd;string">Theory Laden</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#theory_neutral -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#theory_neutral">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">The property of observations being uninfluenced by the theoretical commitments of the observer. Insofar as observations are theory neutral, your beliefs -- as shaped by the theory (or paradigm) you accept -- do not color what you observe, so that partisans of different theories (or paradigms) all observe alike.</description>
+        <term rdf:datatype="&xsd;string">Theory Neutral</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#thesis -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#thesis">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Thesis</term>
+        <description rdf:datatype="&xsd;string">Thesis: In general, any truth or false statement or proposition ; in particular, the main conclusion of an extended argument .</description>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#conclusion"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#proposition"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#transcendent -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Surpassing or apart from sensible or material reality. For Kant, what is beyond the realm of either outer ( perceptive ) or inner ( apperceptive ) experience. In some religious views (on orthodox Christian views, e.g.) God is held to be transcendent (beyond the world). On other pantheistic views (e.g., those of the Stoics or Spinoza) God is held to be an immanent guiding spirit in and of the sensible material world, not existing apart or beyond it. Similarly, Plato asserts the transcendence while Aristotle maintains the immanence of the Forms or essences of things.</description>
+        <term rdf:datatype="&xsd;string">Transcendent</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#apperception"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#essence"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#forms"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#immanent"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#pantheism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#transcendental -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#transcendental">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <term rdf:datatype="&xsd;string">Transcendental</term>
+        <description rdf:datatype="&xsd;string">pertaining to the necessary conditions of the possibility of understanding or experience (Kant).</description>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#truth -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A property of statements, thoughts, or judgments. According to correspondence theories , a statement (e.g.) is true if it corresponds to the facts, and false if it doesn&#39;t. (See Universals , below, for further explanation.). According to coherence theories , the truth of thoughts (e.g.) consists in their coherence with other thoughts.</description>
+        <term rdf:datatype="&xsd;string">Truth</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_fact -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_fact">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">As distinguished by Leibniz, these truths could have been otherwise since their denials are possible and noncontradictory: such truths hold only contingently (as a matter of fact), so knowledge of them requires observation or empirical evidence for its certification. Contrast: truth of reason .</description>
+        <term rdf:datatype="&xsd;string">Truth of Fact</term>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_reason"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_reason -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_reason">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">As distinguished by Leibniz, these are truths which cannot be false because their denials would be contradictory and impossible : such truths hold of necessity and can be known to be true by the exercise of reason alone. Contrast: truth of fact .</description>
+        <term rdf:datatype="&xsd;string">Truth of Reason</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#contradiction"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#impossible"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+        <contrastWith rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_fact"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#turing_test -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#turing_test">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A test proposed by computer pioneer Alan Turing that would take conversational fluency as a sufficient test for computer intelligence. See consciousness objection , other minds .</description>
+        <term rdf:datatype="&xsd;string">Turing Test</term>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#consciousness_objection"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#other_minds"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#underdetermination -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#underdetermination">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">The fact that, for any given body of evidence, there will be many theories that fit the evidence (and perhaps satisfy other criteria of rational acceptance) equally well.</description>
+        <term rdf:datatype="&xsd;string">Underdetermination</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#universal -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#universal">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Pertaining to all , especially all times, all places, and all things.</description>
+        <term rdf:datatype="&xsd;string">Universal</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#universals -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#universals">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">The properties or attributes expressed (or kinds denoted) by abstract or general words or predicates in speech (or concepts in thought). Just as the words (or concepts) apply to many things, properties corresponding to the words (or concepts) inhere in many individuals ; in just those same individuals to which the word (or concept) can be truly applied. The relation between the universal corresponding to the word and the things to which the word is applied in speech (or the concept in thought) is supposed to explain the truth of that application. If the universal the word expresses does belong to the thing to which the word is applied then the application (an assertion , or affirmative judgment ) is true; if the universal does not belong to the thing, then the application is false. &quot;Grass is green&quot; is true because grass has the property of being green; &quot;Grass is carnivorous&quot; is false because grass hasn&#39;t the property of being carnivorous; etc. See nominalism and realism above.</description>
+        <term rdf:datatype="&xsd;string">Universals</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#concept"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+        <seeAlso rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#realism"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#utilitarian -->
+
+    <owl:NamedIndividual rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#utilitarian"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#utilitarianism -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#utilitarianism">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A moral theory originally advanced by Jeremy Bentham according to which the moral character of an act -- whether it&#39;s good or bad or right or wrong -- is entirely determined by its consequences, and likening moral reasoning to economic calculation Utilitarians maintain the right course of action is always the one that has the most beneficial or least detrimental consequences overall, for all affected. Bentham&#39;s hedonistic brand of utilitarianism identifies the benefits in question with pleasure and the costs with pain . John Stuart Mill speaks, instead, of &quot;happiness&quot;: according to Mill&#39;s greatest happiness principle, our moral aim should be &quot;the greatest happiness for the greatest number.&quot; Contemporary utilitarians, like Peter Singer, are more apt to speak of the benefits to be counted as &quot;preference satisfactions&quot; or &quot;interest satisfactions,&quot; counting the corresponding dissatisfactions as costs. Rule utilitarians hold that utilitarian calculation should be used to make rules rather than directly applied to evaluate actions.</description>
+        <term rdf:datatype="&xsd;string">Utilitarianism</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#utility -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#utility">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">For utilitarians, the measure of the moral character of an act or (or for Rule utilitarians a rule), of whether it&#39;s good (or right) or bad (or wrong). The utility of an act (or rule) equals the sum of its beneficial consequences minus the sum of its detrimental consequences: the principle of utility says whatever course of action (or rule) has the most utility -- the best overall benefit-cost outcome -- is the morally right choice.</description>
+        <term rdf:datatype="&xsd;string">Utility</term>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#valid -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#valid">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A property of arguments : being such that the truth of the premises guarantees or necessitates the truth of the conclusion.</description>
+        <term rdf:datatype="&xsd;string">Valid</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#vice -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#vice">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">An undesirable or despicable personality trait, such as cruelty, or cowardice. According to Aristotle vices are either of excess or defect: e.g., cowardice is is not facing up to danger enough (a vice of defect); rashness is facing up to danger too much (a vice of excess); while courage, the intermediate virtue , is facing up to danger appropriately, at the right time, in the right place, for the right reasons.</description>
+        <term rdf:datatype="&xsd;string">Vice</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#virtue"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#virtue -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#virtue">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">A desirable or admirable personality trait, such as kindness, or courage. According to Aristotle every virtue is a mean between two vices : kindness a mean between cruelty and softness; courage a mean between cowardice and rashness; etc.</description>
+        <term rdf:datatype="&xsd;string">Virtue</term>
+        <references rdf:resource="http://www.xmlsummerschool.com/ontologies/philosophy#vice"/>
+    </Concept>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#wmblake.html -->
+
+    <owl:NamedIndividual rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#wmblake.html"/>
+    
+
+
+    <!-- http://www.xmlsummerschool.com/ontologies/philosophy#zombie -->
+
+    <Concept rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <description rdf:datatype="&xsd;string">Humanoid beings that behave like us and may share our functional organizations and even, perhaps, our neurophysiological makeups, but without qualia or subjective experiences.</description>
+        <term rdf:datatype="&xsd;string">Zombies</term>
+    </Concept>
     
 
 
@@ -90,7 +2242,11 @@
     // Annotations
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     --><rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy"><rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Philosophy ontology created from "Larry Hauser's Mostly Modern Philosophical Glossary" at http://members.aol.com/lshauser2/lexicon.html for the XML Summer School</rdfs:comment></rdf:Description>
+     -->
+
+    <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy">
+        <rdfs:comment rdf:datatype="&xsd;string">A Philosophy ontology created from &quot;Larry Hauser&#39;s Mostly Modern Philosophical Glossary&quot; at http://members.aol.com/lshauser2/lexicon.html for the XML Summer School</rdfs:comment>
+    </rdf:Description>
     
 
 
@@ -100,4 +2256,187 @@
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
-     --><rdf:Description><rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/><owl:distinctMembers rdf:parseType="Collection"><rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie"/></owl:distinctMembers></rdf:Description></rdf:RDF><!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#a_posteriori"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#a_priori"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#accident"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#actual"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aesthetic"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aesthetics"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#affirmative_action"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#alienation"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#analytic"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#anarchism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#apperception"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#argument"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#argument_from_evil"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#aristocracy"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#association"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#atomism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#attribute"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#autocracy"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#bourgeios"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#capitalism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cartesianism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#categorical_imperative"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#category"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#catharsis"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cause"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#censorship"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#co-option"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cogito"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cogsci"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#coherence"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#communism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#compatibilism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#computationalism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#concept"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#conceptualism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#conclusion"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#confirmed"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#connotation"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#consciousness_objection"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contingent"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#contradiction"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#correspondence"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cosmological_argument"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#cultural_relativism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#deduction"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#democracy"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#denotation"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#determinism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#dualism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#duty"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#empirical"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#empiricism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#end"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#epistemology"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#essence"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ethical_relativism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ethics"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#euthanasia"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#excluded_middle"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#existentialism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#experiment"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#falifiability"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#forms"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#free_will"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#god"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hedonism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothesis"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_deductive_method"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#hypothetical_imperative"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#idealism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ideas"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#imagination"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#immanent"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#impossible"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#impressions"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#indeterminism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#individuals"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#induction"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#inference"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#informed_consent"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#inherence"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#innate_ideas"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#instrumental"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#instrumentalism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#intrinsic"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#kitsch"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#knowledge"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#logic"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#materialism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#maxim"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#means"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#mechanism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#metaphysics"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#method_of_doubt"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#mind-body"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#monad"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#monism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#natural_theology"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#necessary"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#nihilism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#nominalism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#noumena"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#objective"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#objective_truth"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#obscenity"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#observation"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ockhams_razor"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#oligarchy"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#ontological_argument"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#other_minds"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pantheism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#particulars"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#perceive"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#phenomenon"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#philosophy"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#platonism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pluralism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#possible"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#pragmatism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#premise"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#principle_of_contradiction"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#proletarian"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#property"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#proposition"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#rational"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#rationalism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#realism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reason"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reference"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#reflection"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#repression"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#revealed_theology"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#romanticism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_law"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_realism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#scientific_theory"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sensations"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sense"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#senses"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#skepticism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#social_constructivism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#social_contract"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#solipsism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#statement"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#subjective"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#subjectivism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sublimation"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#substance"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#sufficient_reason"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#syllogism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#synthetic"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#teleological_argument"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#teleology"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#theory_laden"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#theory_neutral"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#thesis"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#transcendent"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#transcendental"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_fact"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#truth_of_reason"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#turing_test"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#underdetermination"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#universal"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#universals"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#utilitarianism"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#utility"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#valid"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#vice"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#virtue"/>
+            <rdf:Description rdf:about="http://www.xmlsummerschool.com/ontologies/philosophy#zombie"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1469) http://owlapi.sourceforge.net -->
+
