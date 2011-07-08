@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mvn jetty:run
+mvn -f `dirname $0`/pom.xml jetty:run
