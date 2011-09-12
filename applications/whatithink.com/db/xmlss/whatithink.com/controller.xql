@@ -22,10 +22,10 @@ import module namespace ontology = "http://whatithink.com/xquery/ontology" at "o
 
 
 (: xhtml 1.1 :)
-(:
 declare option exist:serialize "media-type=text/html method=xhtml doctype-public=-//W3C//DTD&#160;XHTML&#160;1.1//EN doctype-system=http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd";
-:)
+(:
 declare option exist:serialize "media-type=text/html method=xhtml";
+:)
 
 declare variable $exist:path external;
 declare variable $exist:root external;
@@ -113,7 +113,7 @@ let $menus := if($is-logged-in)then
             if(request:get-method() eq "GET")then
                 template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/registration.xml"))))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/user return
                     if(security:register-user($request-data))then
                         local:redirect("entry/browse")
                     else
@@ -151,7 +151,7 @@ let $menus := if($is-logged-in)then
                 let $form-with-terms := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/add-entry.xml")), document { <xf:instance xmlns="http://www.w3.org/2005/Atom" id="termList"><terms>{ ontology:get-as-atom-categories() }</terms></xf:instance> } ) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form-with-terms))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/atom:entry return
                     if(entry:add($request-data))then
                         let $add-entry-success-template := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/add-entry.success.xml")), document { <xh:span id="itemDescription">{$request-data/atom:title/text()}</xh:span> }) return
                             template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $add-entry-success-template))
@@ -169,7 +169,7 @@ let $menus := if($is-logged-in)then
                 let $form-with-terms := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/add-entry-xml.xml")), document { <xf:instance xmlns="" id="userList"><users>{for $user in sm:get-group-members($config:wit-group) return <user name="{$user}" username="{$user}"/> }</users></xf:instance> } ) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form-with-terms))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/entry-upload return
                     if(entry:add-xml($request-data))then
                         template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/add-entry-xml.success.xml"))))
                     else
@@ -186,7 +186,7 @@ let $menus := if($is-logged-in)then
                 let $form := fn:doc(fn:concat($rel-path, "/add-user-xml.xml")) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/user-upload return
                     if(security:create-user-from-xml($request-data))then
                         template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/add-user-xml.success.xml"))))
                     else
@@ -203,7 +203,7 @@ let $menus := if($is-logged-in)then
                 let $form := fn:doc(fn:concat($rel-path, "/upload-ontology-xml.xml")) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/ontology-upload return
                     if(ontology:create-from-xml($request-data))then
                         template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/upload-ontology-xml.success.xml"))))
                     else
@@ -224,7 +224,7 @@ let $menus := if($is-logged-in)then
                 let $form-with-terms := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/add-order-xml.xml")), document { <xf:instance xmlns="" id="userList"><users>{for $user in sm:get-group-members($config:wit-group) return <user name="{$user}" username="{$user}"/> }</users></xf:instance> } ) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form-with-terms))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/order-upload return
                     if(mylist:order-from-xml($request-data))then
                         template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/add-order-xml.success.xml"))))
                     else
@@ -315,7 +315,7 @@ let $menus := if($is-logged-in)then
             if(request:get-method() eq "GET")then
                 template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, fn:doc(fn:concat($rel-path, "/order.xml"))))
             else if(request:get-method() eq "POST")then
-                let $request-data := request:get-data() return
+                let $request-data := request:get-data()/order:Order return
                     if(mylist:order($request-data))then
                         let $order-success-template := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/order.success.xml")), document { <xh:span id="itemDescription">{$request-data/order:Item/order:Description/text()}</xh:span> }) return
                             template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $order-success-template))

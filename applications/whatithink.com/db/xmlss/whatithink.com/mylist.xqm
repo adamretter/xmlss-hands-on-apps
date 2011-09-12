@@ -9,6 +9,7 @@ declare namespace status = "http://whatithink.com/printer/order/status";
 
 import module namespace dt = "http://exist-db.org/xquery/datetime";
 import module namespace httpclient = "http://exist-db.org/xquery/httpclient";
+import module namespace sm = "http://exist-db.org/xquery/securitymanager";
 import module namespace util = "http://exist-db.org/xquery/util";
 
 import module namespace config = "http://whatithink.com/xquery/config" at "config.xqm";
@@ -69,7 +70,8 @@ declare function mylist:get-or-create() as document-node() {
         if(fn:doc-available($mylist-uri))then
             fn:doc($mylist-uri)
         else
-            let $mylist-uri := xmldb:store(security:get-user-collection-path(), $mylist:mylist-filename, <mylist:list/>) return
+            let $mylist-uri := xmldb:store(security:get-user-collection-path(), $mylist:mylist-filename, <mylist:list/>),
+            $null := sm:chmod(xs:anyURI($mylist-uri), "rwur--r--") return
                 fn:doc($mylist-uri)
 };
 

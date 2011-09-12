@@ -7,19 +7,20 @@ Application notes
 5) Enable xslfo module in conf.xml
 6) Enable datetime module in conf.xml
 7) bin/startup.sh
+8) Restore the database backup from SourceForge Subversion - https://seewhatithink.svn.sourceforge.net/svnroot/seewhatithink/trunk/applications/whatithink.com
+9) bin/shutdown.sh
+10) bin/startup.sh
+11) Visit - http://localhost:8080/exist/apps/xmlss/whatithink.com/
 
-...
-
-8) Restore the backup
 
 NOTE managers need to be in the 'dba' group
 
 
 --- KNOWN ISSUES ---
-1) Login box does not work from Registration page (maybe not important)
-2) Upload Ontology does not work at the moment (to be fixed)
-3) Cannot output doctype declaration from XQuery on XForm pages as betterForm does like it (to be fixed)
+1) Upload Ontology does not work at the moment (to be fixed)
 
---- OLD --
+
+
+--- OLD (IGNORE) --
 1) the group "whatithink.users" needs to be created
 3) Collection /db/xmlss/whatithink.com/users needs to be created, owned by "admin":"whatithink.users", permissions "rwurwur--"

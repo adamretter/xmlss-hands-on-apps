@@ -5,6 +5,8 @@ module namespace ontology = "http://whatithink.com/xquery/ontology";
 declare namespace atom = "http://www.w3.org/2005/Atom";
 declare namespace ont = "http://www.xmlsummerschool.com/ontologies/philosophy#";
 
+import module namespace sm = "http://exist-db.org/xquery/securitymanager";
+
 import module namespace config = "http://whatithink.com/xquery/config" at "config.xqm";
 
 declare variable $ontology:ontology-doc := "philosophy.owl";
@@ -16,7 +18,8 @@ declare function ontology:create-from-xml($ontology-upload as element(ontology-u
     let $ontology := util:parse(util:base64-decode($ontology-upload/file)) return
         
         (: overwrite the ontology :)
-        let $null := xmldb:store($config:wit-ontology-collection, $ontology:ontology-doc, $ontology) return
+        let $ontology-uri := xmldb:store($config:wit-ontology-collection, $ontology:ontology-doc, $ontology),
+        $null := sm:chmod(xs:anyURI($ontology-uri), "rwurwur--") return
             true() 
 };
 

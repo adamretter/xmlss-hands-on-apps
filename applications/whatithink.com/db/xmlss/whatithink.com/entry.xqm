@@ -6,6 +6,7 @@ declare namespace atom = "http://www.w3.org/2005/Atom";
 declare namespace xh = "http://www.w3.org/1999/xhtml";
 
 import module namespace kwic = "http://exist-db.org/xquery/kwic";
+import module namespace sm = "http://exist-db.org/xquery/securitymanager";
 import module namespace util = "http://exist-db.org/xquery/util";
 
 import module namespace config = "http://whatithink.com/xquery/config" at "config.xqm";
@@ -78,6 +79,7 @@ declare function entry:browse-all-entries() as element(xh:ul) {
 
 declare function entry:add($entry as element(atom:entry)) as xs:boolean {
     let $entry-uri := xmldb:store(security:get-user-collection-path(), (), $entry),
+    $null := sm:chmod(xs:anyURI($entry-uri), "rwur-ur--"),
     $null := update value fn:doc($entry-uri)/atom:entry/atom:id with fn:concat("urn:uuid:", util:uuid()) return
         not(empty($entry-uri))
 };
@@ -88,7 +90,8 @@ declare function entry:add-xml($entry-upload as element(entry-upload)) as xs:boo
     let $entry := util:parse(util:base64-decode($entry-upload/file)),
     $for-username := $entry-upload/for/username return
     
-        let $entry-uri := xmldb:store(security:get-user-collection-path($for-username), (), $entry) return
+        let $entry-uri := xmldb:store(security:get-user-collection-path($for-username), (), $entry),
+        $null := sm:chmod(xs:anyURI($entry-uri), "rwur-ur--") return
             not(empty($entry-uri))
 };
 
