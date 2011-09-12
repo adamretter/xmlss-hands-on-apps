@@ -1,4 +1,5 @@
 Application notes
+-----------------
 
 1) checkout from eXist trunk from svn
 2) enable xslfo module in extensions/build.properties
@@ -13,11 +14,7 @@ Application notes
 11) Visit - http://localhost:8080/exist/apps/xmlss/whatithink.com/
 
 
-NOTE managers need to be in the 'dba' group
-
-
---- KNOWN ISSUES ---
-1) Upload Ontology does not work at the moment (to be fixed)
+NOTE 'managers' of the whatithink.com need to be in the 'dba' group to see all of the management menu items in the webapp!
 
 
 
