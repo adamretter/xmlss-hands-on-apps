@@ -1,3 +1,26 @@
+(:
+ Copyright 2011 Adam Retter
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+:)
+
+(:~
+: This script forms the URI router for the whatithink.com
+: webapp. All web-requests are intercepted and dispatched by this script.
+:
+: @author Adam Retter <adam.retter@googlemail.com>
+: @version 201109122029
+:)
 xquery version "1.0";
 
 declare namespace atom = "http://www.w3.org/2005/Atom";
@@ -244,6 +267,7 @@ let $menus := if($is-logged-in)then
                 let $form := fn:doc(fn:concat($rel-path, "/xquery.xml")) return
                     template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $form))
             else if(request:get-method() eq "POST") then
+                let $null := util:declare-option("exist:serialize", "media-type=text/html method=xhtml") return
                 <results>{util:eval-with-context(request:get-parameter("xquery",()), (), false())}</results>
         else
             local:ignore()
