@@ -65,16 +65,19 @@ declare function local:apply-specific-menu($standard-menus as document-node()+, 
 (: is someone logged in? :)
 let $menus := if($is-logged-in)then
         (
+            if(security:is-user() or security:is-manager())then
+                fn:doc(fn:concat($rel-path, "/user-header-links.xml"))
+            else()
+            ,
+            
             if(security:is-user())then
-            (
-                fn:doc(fn:concat($rel-path, "/user-header-links.xml")),
                 fn:doc(fn:concat($rel-path, "/user-menu-box.xml"))
-            )else(),
+            else()
+            ,
             
             if(security:is-manager())then
-            (
                 fn:doc(fn:concat($rel-path, "/manager-menu-box.xml"))
-            )else()
+            else()
         )
     else (
         if(request:get-parameter("login", ()) eq "failed") then
