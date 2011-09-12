@@ -1,3 +1,27 @@
+(:
+ Copyright 2011 Adam Retter
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+:)
+
+(:~
+: This module generates an XForms instance for the place order XForm
+: It is this completed instance which can be sent to the Printers
+: RESTful web service.
+:
+: @author Adam Retter <adam.retter@googlemail.com>
+: @version 201109122029
+:)
 xquery version "1.0";
 
 declare namespace atom = "http://www.w3.org/2005/Atom";
@@ -53,6 +77,8 @@ import module namespace security = "http://whatithink.com/xquery/security" at "s
                 </author>
                 <id>{fn:concat("urn:uuid:", util:uuid())}</id>
                 {
+                    (: add the currently logged in users
+                    list of atom entries to the order :)
                     for $entry in mylist:get-entries() return
                         $entry
                 }
