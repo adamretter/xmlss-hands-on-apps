@@ -330,9 +330,12 @@ let $menus := if($is-logged-in)then
         else if($exist:path eq "/mylist.pdf")then
             (: TODO consider a redirect to /list/<username>/mylist.pdf i.e. make lists public atom feeds etc :)
                 let $atom := mylist:as-atom-feed(),
-                $fo-doc := transform:transform($atom, fn:doc(fn:concat($rel-path, "/mylist-to-fo.xslt")), <parameters><param name="logoUri" value="{$rel-path}/images/bg/banner.gif"/><param name="bgUri" value="{$rel-path}/images/bg/fo-background.gif"/></parameters>), 
+                $fo-doc := transform:transform($atom, fn:doc(fn:concat($rel-path, "/mylist-to-fo.xslt")), <parameters><param name="logoUri" value="{$rel-path}/images/bg/banner.gif"/><param name="bgUri" value="{$rel-path}/images/bg/fo-background.gif"/></parameters>),
                 $pdf := xslfo:render($fo-doc, "application/pdf", ()) return
-                    response:stream-binary($pdf, "application/pdf", ())
+                    (
+                        response:stream-binary($pdf, "application/pdf", ()),
+                        <empty/> (: TODO for some reason the URLRewrite controller in latest eXist-db trunk insists on at least one element being returned?!? :)
+                    )
         
         else if($exist:path eq "/mylist/clear")then
             let $null := mylist:clear() return
