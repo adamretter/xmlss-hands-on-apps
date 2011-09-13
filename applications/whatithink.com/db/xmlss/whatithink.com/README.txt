@@ -1,15 +1,14 @@
 About
 -----
 This is the seewhatithink.com training Web Application
-for the XML Summer School.
+for the XML Summer School - www.xmlsummerschool.com
 
 The application has been re-developed in a pure
 XML application stack for 2011.
 The following technologies and standards are used:
 XQuery, XForms, XSLT, XSL-FO and XML.
-The application run's atop the eXist-db
-Native XML Database application
-platform - www.exist-db.org
+The application run's atop the eXist-db Native
+XML Database application platform - www.exist-db.org
 
 Author: Adam Retter <adam.retter@googlemail.com>
 Licence: Apache License Version 2.0
