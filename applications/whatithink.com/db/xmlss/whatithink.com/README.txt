@@ -21,21 +21,25 @@ Oracle/Sun Java JDK 1.6
 
 How to Install
 --------------
-1) checkout eXist trunk from SourceForge Subversion e.g.
+1) Checkout eXist-db trunk from SourceForge Subversion e.g.
 
 svn co https://exist.svn.sourceforge.net/svnroot/exist/trunk/eXist
+
 
 2) Set an Environment Variable EXIST_HOME that points to the location where you just checked out eXist-db e.g.
 export EXIST_HOME=/opt/eXist
 
-3) enable xslfo module in $EXIST_HOME/extensions/build.properties e.g.
+
+3) Enable the xslfo module in $EXIST_HOME/extensions/build.properties e.g.
 
 # XSL FO transformations (Uses Apache FOP)
 include.module.xslfo = true
 
+
 4) Build the eXist-db source code 
 cd $EXIST_HOME
 ./build.sh
+
 
 5) Modify $EXIST_HOME/webapp/WEB-INF/web.xml so that XFormsFilter is filtering the path /apps/* e.g.
 
@@ -44,20 +48,24 @@ cd $EXIST_HOME
     <url-pattern>/apps/*</url-pattern>
 </filter-mapping>
 
-6) Uncomment xslfo xquery extension module in $EXIST_HOME/conf.xml e.g.
+
+6) Uncomment the xslfo XQuery extension module in $EXIST_HOME/conf.xml e.g.
 
 <module uri="http://exist-db.org/xquery/xslfo" class="org.exist.xquery.modules.xslfo.XSLFOModule">
     <parameter name="processorAdapter" value="org.exist.xquery.modules.xslfo.ApacheFopProcessorAdapter"/>
 </module>
 
-7) Uncomment datetime module in $EXIST_HOME/conf.xml e.g.
+
+7) Uncomment the datetime XQuery extension module in $EXIST_HOME/conf.xml e.g.
 
 <module uri="http://exist-db.org/xquery/datetime" class="org.exist.xquery.modules.datetime.DateTimeModule"/>
 
 
-8) Checkout the database backup from SourceForge Subversion into a folder somewhere safe e.g.
+8) Checkout the eXist-db database backup of the whatithink.com web application
+from SourceForge Subversion (into a folder somewhere safe) e.g.
 
 svn co https://seewhatithink.svn.sourceforge.net/svnroot/seewhatithink/trunk/applications/whatithink.com
+
 
 9) Startup the eXist-db database e.g.
 
