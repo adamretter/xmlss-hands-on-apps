@@ -72,7 +72,7 @@ declare function mylist:browse-all-entries() as element(xh:ul) {
     <xh:ul id="myEntryList">
     {
         for $entry in mylist:get-entries() return   
-            <xh:li><xh:a href="entry/browse/{entry:create-uri($entry)}">{$entry/atom:title/text()}</xh:a></xh:li>
+            <xh:li><xh:a href="entry/view/{entry:create-uri($entry)}">{$entry/atom:title/text()}</xh:a></xh:li>
     }
     </xh:ul>
 };

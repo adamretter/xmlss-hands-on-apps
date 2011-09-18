@@ -75,7 +75,7 @@ bin/startup.sh
 10) Restore the database backup from Step (8) e.g.
 
 cd $EXIST_HOME
-bin/backup.sh -u admin -r ../whatithink.com/db/__contents__.xml 
+bin/backup.sh -u admin -r ../whatithink.com/db/__contents__.xml
 
 NOTE - the path to whatithink.com may need to be adjusted depending on where you checked this out to in Step (8). 
 
