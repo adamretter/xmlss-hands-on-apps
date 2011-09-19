@@ -118,7 +118,14 @@ declare function entry:search-by-term($rel-path as xs:string, $request-rel-path 
 :)
 declare function entry:show-add-to-mylist($entry as element(atom:entry), $is-logged-in as xs:boolean) as element(xh:a)? {
     if($is-logged-in and fn:starts-with(fn:document-uri(fn:root($entry)), security:get-user-collection-path()))then
-        <xh:a href="mylist/add/entry/{entry:create-uri($entry)}"><xh:img src="images/icons/tick.gif" alt="Print/Order"/></xh:a>
+        let $entry-uri := entry:create-uri($entry) return
+            element xh:input {
+                attribute type { "checkbox" },
+                attribute value { $entry-uri },
+                if(mylist:has-entry($entry))then
+                    attribute checked{ "checked" }
+                else()
+            }
     else()
 };
 
@@ -148,7 +155,6 @@ declare function entry:browse-user-entries() as element(xh:ul) {
                 }
             }
     }
-    <!-- xh:a href="mylist/add/entry/{$entry-uri}"><xh:img src="images/icons/tick.gif" alt="Print/Order"/></xh:a -->
     </xh:ul>
 };
 
