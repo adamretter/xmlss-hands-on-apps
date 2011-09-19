@@ -98,9 +98,10 @@ let $menus := if($is-logged-in)then
             else()
             ,
             
-            if(security:is-manager())then
+            if(security:is-manager())then(
+                fn:doc(fn:concat($rel-path, "/user-header-links.xml")),
                 fn:doc(fn:concat($rel-path, "/manager-menu-box.xml"))
-            else()
+            )else()
         )
     else (
         if(request:get-parameter("login", ()) eq "failed") then
