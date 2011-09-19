@@ -1,7 +1,87 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="content" class="text_links"><h2>Add Entry</h2><xf:model><xf:instance xmlns="http://www.w3.org/2005/Atom"><entry><id/><title/><updated/><link href=""/><summary/><category term=""/>
-                <!-- <category term="" label=""/> --></entry></xf:instance><xf:instance xmlns="http://www.w3.org/2005/Atom" id="termList"/><xf:instance xmlns="http://www.w3.org/2005/Atom" id="template"><category term=""/>
-            <!-- <category term="" label=""/> --></xf:instance><xf:bind nodeset="*:title" constraint="bf:match(., '[A-Za-z0-9\-\s]{3,}', '')" required="true()"/><xf:bind nodeset="*:link/@href" required="true()" type="anyURI"/><xf:bind nodeset="*:summary" required="true()"/><xf:bind nodeset="*:updated" calculate="now()"/><xf:bind nodeset="instance()/*:category/@term" required="true()"/> <!-- TODO add unique constraint -->
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="content" class="text_links">
+    <h2>Add Entry</h2>
+    <xf:model>
+        <xf:instance xmlns="http://www.w3.org/2005/Atom">
+            <entry>
+                <id/>
+                <title/>
+                <updated/>
+                <link href="http://www.xmlsummerschool.com"/>
+                <summary/>
+                <category term=""/>
+                <!-- <category term="" label=""/> -->
+            </entry>
+        </xf:instance>
+        <xf:instance xmlns="http://www.w3.org/2005/Atom" id="termList"/>
+        <xf:instance xmlns="http://www.w3.org/2005/Atom" id="template">
+            <category term=""/>
+            <!-- <category term="" label=""/> -->
+        </xf:instance>
+        <xf:bind nodeset="*:title" constraint="bf:match(., '[A-Za-z0-9\-\s]{3,}', '')" required="true()"/>
+        <xf:bind nodeset="*:link/@href" required="true()" type="anyURI"/>
+        <xf:bind nodeset="*:summary" required="true()"/>
+        <xf:bind nodeset="*:updated" calculate="now()"/>
+        <xf:bind nodeset="instance()/*:category/@term" required="true()"/> <!-- TODO add unique constraint -->
         
-        <!-- xf:submission id="s-send" method="put" resource="http://localhost:8080/exist/rest/db/tmp/1.xml" --><xf:submission id="s-send" method="post" resource="add"><xf:action ev:event="xforms-submit-error"><xf:message>Registration failed. Please fill in valid values</xf:message></xf:action><xf:action ev:event="xforms-submit-done"><xf:message>You have been registered successfully.</xf:message></xf:action></xf:submission></xf:model><xf:group appearance="bf:verticalTable"><xf:label>New entry form</xf:label><xf:input ref="*:title"><xf:label>Enter a title:</xf:label><xf:hint>Enter a title</xf:hint><xf:alert>Three or more characters (A-Z a-z 0-9) required</xf:alert></xf:input><xf:input ref="*:link/@href"><xf:label>Enter a Link:</xf:label><xf:hint>Enter a link (e.g. http://www.somewhere.com)</xf:hint><xf:alert>Three or more characters (A-Z a-z 0-9) required</xf:alert></xf:input><xf:textarea ref="*:summary">
-        <!-- xf:textarea ref="content" mediatype="text/html" incremental="true" --><xf:label>Content</xf:label><xf:hint>Enter some content for your entry</xf:hint><xf:alert>invalid content</xf:alert></xf:textarea><xf:repeat nodeset="instance()/*:category" appearance="compact" id="termRepeat"><xf:select1 ref="@term" appearance="minimal"><xf:label>Select a Term</xf:label><xf:hint>Select a term</xf:hint><xf:alert>You must select at least one term</xf:alert><xf:itemset nodeset="instance('termList')/*:category"><xf:label ref="@label"/><xf:value ref="@term"/>
-                    <!-- xf:copy ref="."/ --></xf:itemset></xf:select1></xf:repeat><xf:trigger><xf:label>Add Term</xf:label><xf:hint>Adds a new term to the entry</xf:hint><xf:action><xf:insert at="last()" nodeset="instance()/*:category" origin="instance('template')" position="after"/></xf:action></xf:trigger><xf:trigger><xf:label>Delete Term</xf:label><xf:hint>Deletes selected Term from the entry</xf:hint><xf:action><xf:delete at="index('termRepeat')" if="count(instance()/*:category) gt 1" nodeset="instance()/*:category"/></xf:action></xf:trigger><xf:trigger src="images/icons/btn_add_entry.gif"><xf:label>Add entry</xf:label><xf:hint>Adds your new entry to the system</xf:hint><xf:send submission="s-send"/></xf:trigger></xf:group></div>
+        <!-- xf:submission id="s-send" method="put" resource="http://localhost:8080/exist/rest/db/tmp/1.xml" -->
+        <xf:submission id="s-send" method="post" resource="add">
+            <xf:action ev:event="xforms-submit-error">
+                <xf:message>Registration failed. Please fill in valid values</xf:message>
+            </xf:action>
+            <xf:action ev:event="xforms-submit-done">
+                <xf:message>You have been registered successfully.</xf:message>
+            </xf:action>
+        </xf:submission>
+    </xf:model>
+    <xf:group appearance="bf:verticalTable">
+        <xf:label>New entry form</xf:label>
+        <xf:input ref="*:title">
+            <xf:label>Enter a title:</xf:label>
+            <xf:hint>Enter a title</xf:hint>
+            <xf:alert>Three or more characters (A-Z a-z 0-9) required</xf:alert>
+        </xf:input>
+        <xf:input ref="*:link/@href">
+            <xf:label>Enter a Link:</xf:label>
+            <xf:hint>Enter a link (e.g. http://www.somewhere.com)</xf:hint>
+            <xf:alert>Three or more characters (A-Z a-z 0-9) required</xf:alert>
+        </xf:input>
+        <xf:textarea ref="*:summary">
+            <!-- xf:textarea ref="content" mediatype="text/html" incremental="true" -->
+            <xf:label>Content</xf:label>
+            <xf:hint>Enter some content for your entry</xf:hint>
+            <xf:alert>invalid content</xf:alert>
+        </xf:textarea>
+        <xf:repeat nodeset="instance()/*:category" appearance="compact" id="termRepeat">
+            <xf:select1 ref="@term" appearance="minimal">
+                <xf:label>Select a Term</xf:label>
+                <xf:hint>Select a term</xf:hint>
+                <xf:alert>You must select at least one term</xf:alert>
+                <xf:itemset nodeset="instance('termList')/*:category">
+                    <xf:label ref="@label"/>
+                    <xf:value ref="@term"/>
+                    <!-- xf:copy ref="."/ -->
+                </xf:itemset>
+            </xf:select1>
+        </xf:repeat>
+        <xf:trigger>
+            <xf:label>Add Term</xf:label>
+            <xf:hint>Adds a new term to the entry</xf:hint>
+            <xf:action>
+                <xf:insert at="last()" nodeset="instance()/*:category" origin="instance('template')" position="after"/>
+            </xf:action>
+        </xf:trigger>
+        <xf:trigger>
+            <xf:label>Delete Term</xf:label>
+            <xf:hint>Deletes selected Term from the entry</xf:hint>
+            <xf:action>
+                <xf:delete at="index('termRepeat')" if="count(instance()/*:category) gt 1" nodeset="instance()/*:category"/>
+            </xf:action>
+        </xf:trigger>
+        <xf:trigger src="images/icons/btn_add_entry.gif">
+            <xf:label>Add entry</xf:label>
+            <xf:hint>Adds your new entry to the system</xf:hint>
+            <xf:send submission="s-send"/>
+        </xf:trigger>
+    </xf:group>
+</div>
