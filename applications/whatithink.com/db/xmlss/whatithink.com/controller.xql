@@ -303,6 +303,17 @@ let $menus := if($is-logged-in)then
                 template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($specific-menus, $search-template))
         
         else if(fn:starts-with($exist:path, "/mylist/add/entry/"))then
+            (: ONLY called from AJAX :)
+            let $entry-uri := fn:replace($exist:path, "/mylist/add/entry/", ""),
+            $entry := entry:get-entry-from-uri($entry-uri) return
+            
+                if(mylist:add($entry))then
+                    <result>true</result>
+                else(
+                    response:set-status-code(400),
+                    <result>false</result>
+                )
+            (:
             let $entry-uri := fn:replace($exist:path, "/mylist/add/entry/", ""),
             $entry := entry:get-entry-from-uri($entry-uri),
             $entry-title := document { <xh:span id="entryTitle">{$entry/atom:title/text()}</xh:span> },
@@ -317,6 +328,35 @@ let $menus := if($is-logged-in)then
             )
             return
                 template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $mylist-template))
+            :)
+        
+        else if(fn:starts-with($exist:path, "/mylist/remove/entry/"))then
+            (: ONLY called from AJAX :)
+            let $entry-uri := fn:replace($exist:path, "/mylist/remove/entry/", ""),
+            $entry := entry:get-entry-from-uri($entry-uri) return
+                if(mylist:remove($entry))then
+                    <result>true</result>
+                else(
+                    response:set-status-code(400),
+                    <result>false</result>
+                )
+
+            (:
+            let $entry-uri := fn:replace($exist:path, "/mylist/remove/entry/", ""),
+            $entry := entry:get-entry-from-uri($entry-uri),
+            $entry-title := document { <xh:span id="entryTitle">{$entry/atom:title/text()}</xh:span> },
+            $mylist-template := template:merge(
+                $exist:path,
+                if(mylist:remove($entry))then
+                    fn:doc(fn:concat($rel-path, "/remove-from-mylist.success.xml"))
+                else
+                    fn:doc(fn:concat($rel-path, "/remove-from-mylist.error.xml"))
+                ,
+                $entry-title
+            )
+            return
+                template:process-template($rel-path, $exist:path, $DEFAULT-TEMPLATE, ($menus, $mylist-template))
+            :)
         
         else if($exist:path eq "/mylist")then
             let $mylist-template := template:merge($exist:path, fn:doc(fn:concat($rel-path, "/mylist.xml")), document{ mylist:browse-all-entries() }) return

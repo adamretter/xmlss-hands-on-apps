@@ -62,6 +62,26 @@ declare function mylist:add($entry as document-node()) as xs:boolean {
 };
 
 (:~
+: Removes an atom entry from the users list
+:
+: @param entry
+:   The atom entry to remove to the list
+:
+: @return
+:   true() if the entry was removed from the list, false() otherwise
+:)
+declare function mylist:remove($entry as document-node()) as xs:boolean {
+    let $mylist := mylist:get-or-create(),
+    $mylist-entry := $mylist/mylist:list/mylist:entry[@ref eq $entry/atom:entry/atom:id] return
+        if(fn:empty($mylist-entry))then
+            true()
+        else(
+            let $null := update delete $mylist-entry return
+                true()
+        )
+};
+
+(:~
 : Generates an XHTML list of the current logged in users atom entries
 :
 : @return
@@ -128,6 +148,20 @@ declare function mylist:get-or-create() as document-node() {
             let $mylist-uri := xmldb:store(security:get-user-collection-path(), $mylist:mylist-filename, <mylist:list/>),
             $null := sm:chmod(xs:anyURI($mylist-uri), "rwur--r--") return
                 fn:doc($mylist-uri)
+};
+
+(:~
+: Determines whether the entry exists in the users list
+:
+: @param $entry
+:   The atom entry
+:
+: @return
+:   true() if the entry exists in the users list, false() otherwise
+:)
+declare function mylist:has-entry($entry as element(atom:entry)) as xs:boolean {
+    let $mylist := mylist:get-or-create() return
+        fn:not(fn:empty($mylist[mylist:list/mylist:entry/@ref = $entry/atom:id])) 
 };
 
 (:~

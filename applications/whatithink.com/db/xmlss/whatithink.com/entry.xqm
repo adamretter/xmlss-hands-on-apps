@@ -33,6 +33,7 @@ import module namespace sm = "http://exist-db.org/xquery/securitymanager";
 import module namespace util = "http://exist-db.org/xquery/util";
 
 import module namespace config = "http://whatithink.com/xquery/config" at "config.xqm";
+import module namespace mylist = "http://whatithink.com/xquery/mylist" at "mylist.xqm";
 import module namespace security = "http://whatithink.com/xquery/security" at "security.xqm";
 
 (:~
@@ -133,10 +134,21 @@ declare function entry:browse-user-entries() as element(xh:ul) {
     {
         for $entry in fn:collection(security:get-user-collection-path())/atom:entry
         let $entry-uri := entry:create-uri($entry) return
-            <xh:li>
-                <xh:a href="entry/view/{$entry-uri}">{$entry/atom:title/text()}</xh:a><xh:a href="mylist/add/entry/{$entry-uri}"><xh:img src="images/icons/tick.gif" alt="Print/Order"/></xh:a>
-            </xh:li>
+            element xh:li {
+                element xh:a {
+                    attribute href { fn:concat("entry/view/", $entry-uri) },
+                    $entry/atom:title/text()
+                },
+                element xh:input {
+                    attribute type { "checkbox" },
+                    attribute value { $entry-uri },
+                    if(mylist:has-entry($entry))then
+                        attribute checked{ "checked" }
+                    else()
+                }
+            }
     }
+    <!-- xh:a href="mylist/add/entry/{$entry-uri}"><xh:img src="images/icons/tick.gif" alt="Print/Order"/></xh:a -->
     </xh:ul>
 };
 
