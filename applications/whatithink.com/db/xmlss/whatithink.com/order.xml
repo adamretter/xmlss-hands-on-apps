@@ -1,20 +1,218 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="content" class="text_links"><h2>Order Little Red Book</h2><xf:model><xf:instance src="order-xform-instance.xql"/><xf:instance xmlns="" id="temp"><total>10.00</total></xf:instance><xf:bind id="quantity" nodeset="*:Quantity" type="int" required="true()"/><xf:bind nodeset="*:DatePlaced" calculate="now()"/><xf:bind id="payment_method" nodeset="*:PaymentMethod" required="true()"/><xf:bind id="description" nodeset="*:Item/*:Description" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/><xf:bind id="price" nodeset="*:Item/*:Price" type="decimal" readonly="true()"/><xf:bind id="total" nodeset="instance('temp')" calculate="format-number(instance()/*:Item/*:Price * instance()/*:Quantity, '00.00')"/><xf:bind id="title" nodeset="*:Customer/*:Contact/*:Title" required="true()"/><xf:bind id="forename" nodeset="*:Customer/*:Contact/*:Forename" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/><xf:bind id="surname" nodeset="*:Customer/*:Contact/*:Surname" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/><xf:bind id="telephone" nodeset="*:Customer/*:Contact/*:Telephone" constraint="bf:match(., '[0-9\-\s]{6,}', '')" required="true()"/><xf:bind id="fax" nodeset="*:Customer/*:Contact/*:Fax" constraint="bf:match(., '[0-9\-\s]{6,}', '') or string-length(.) eq 0" required="false()"/><xf:bind id="email" nodeset="*:Customer/*:Contact/*:Email" constraint="string-length(.) &gt; 3" type="email" required="true()"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:bf="http://betterform.sourceforge.net/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bfc="http://betterform.sourceforge.net/xforms/controls" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="content" class="text_links">
+    <h2>Order Little Red Book</h2>
+    <xf:model>
+        <xf:instance src="order-xform-instance.xql"/>
+        <xf:instance xmlns="" id="temp">
+            <total>10.00</total>
+        </xf:instance>
+        <xf:bind id="quantity" nodeset="*:Quantity" type="int" required="true()"/>
+        <xf:bind nodeset="*:DatePlaced" calculate="now()"/>
+        <xf:bind id="payment_method" nodeset="*:PaymentMethod" required="true()"/>
+        <xf:bind id="description" nodeset="*:Item/*:Description" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/>
+        <xf:bind id="price" nodeset="*:Item/*:Price" type="decimal" readonly="true()"/>
+        <xf:bind id="total" nodeset="instance('temp')" calculate="format-number(instance()/*:Item/*:Price * instance()/*:Quantity, '00.00')"/>
+        <xf:bind id="title" nodeset="*:Customer/*:Contact/*:Title" required="true()"/>
+        <xf:bind id="forename" nodeset="*:Customer/*:Contact/*:Forename" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/>
+        <xf:bind id="surname" nodeset="*:Customer/*:Contact/*:Surname" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/>
+        <xf:bind id="telephone" nodeset="*:Customer/*:Contact/*:Telephone" constraint="bf:match(., '[0-9\-\s]{6,}', '')" required="true()"/>
+        <xf:bind id="fax" nodeset="*:Customer/*:Contact/*:Fax" constraint="bf:match(., '[0-9\-\s]{6,}', '') or string-length(.) eq 0" required="false()"/>
+        <xf:bind id="email" nodeset="*:Customer/*:Contact/*:Email" constraint="string-length(.) &gt; 3" type="email" required="true()"/>
         
-        <!-- constraint and required attributes are setup so that building_number and building_name are mutually exclusive --><xf:bind id="building_number" nodeset="*:Customer/*:Address/*:BuildingNumber" constraint="(bf:match(., '[0-9]{1,}', '') and string-length(.) &gt; 0) or string-length(../*:BuildingName) &gt; 0" required="string-length(../*:BuildingName) eq 0"/><xf:bind id="building_name" nodeset="*:Customer/*:Address/*:BuildingName" constraint="(bf:match(., '[A-Za-z0-9\-\s]{2,}', '') and string-length(.) &gt; 0) or string-length(../*:BuildingNumber) &gt; 0" required="string-length(../*:BuildingNumber) eq 0"/><xf:bind id="address_line_1" nodeset="*:Customer/*:Address/*:AddressLine[1]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/><xf:bind id="address_line_2" nodeset="*:Customer/*:Address/*:AddressLine[2]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '') or string-length(.) eq 0" required="false()"/><xf:bind id="address_line_3" nodeset="*:Customer/*:Address/*:AddressLine[3]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '') or string-length(.) eq 0" required="false()"/><xf:bind id="postcode" nodeset="*:Customer/*:Address/*:Postcode" required="true()"/><xf:bind id="country" nodeset="*:Customer/*:Address/*:Country" required="true()"/>
+        <!-- constraint and required attributes are setup so that building_number and building_name are mutually exclusive -->
+        <xf:bind id="building_number" nodeset="*:Customer/*:Address/*:BuildingNumber" constraint="(bf:match(., '[0-9]{1,}', '') and string-length(.) &gt; 0) or string-length(../*:BuildingName) &gt; 0" required="string-length(../*:BuildingName) eq 0"/>
+        <xf:bind id="building_name" nodeset="*:Customer/*:Address/*:BuildingName" constraint="(bf:match(., '[A-Za-z0-9\-\s]{2,}', '') and string-length(.) &gt; 0) or string-length(../*:BuildingNumber) &gt; 0" required="string-length(../*:BuildingNumber) eq 0"/>
+        <xf:bind id="address_line_1" nodeset="*:Customer/*:Address/*:AddressLine[1]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '')" required="true()"/>
+        <xf:bind id="address_line_2" nodeset="*:Customer/*:Address/*:AddressLine[2]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '') or string-length(.) eq 0" required="false()"/>
+        <xf:bind id="address_line_3" nodeset="*:Customer/*:Address/*:AddressLine[3]" constraint="bf:match(., '[A-Za-z0-9\-\s]{2,}', '') or string-length(.) eq 0" required="false()"/>
+        <xf:bind id="postcode" nodeset="*:Customer/*:Address/*:Postcode" required="true()"/>
+        <xf:bind id="country" nodeset="*:Customer/*:Address/*:Country" required="true()"/>
         
-        <!-- xf:submission id="s-send" method="put" resource="http://localhost:8080/exist/rest/db/tmp/1.xml" --><xf:submission id="s-send" method="post" resource="order"><xf:action ev:event="xforms-submit-error"><xf:message>Order failed. Please fill in valid values</xf:message></xf:action><xf:action ev:event="xforms-submit-done"><xf:message>Your Order has been submitted successfully.</xf:message></xf:action></xf:submission></xf:model><xf:group><xf:group><xf:group appearance="bf:verticalTable" id="orderContact"><xf:select1 bind="title"><xf:label>Title</xf:label><xf:hint>Select a title</xf:hint><xf:alert>A title is required</xf:alert><xf:item><xf:label>Mr</xf:label><xf:value>Mr</xf:value></xf:item><xf:item><xf:label>Mrs</xf:label><xf:value>Mrs</xf:value></xf:item><xf:item><xf:label>Miss</xf:label><xf:value>Miss</xf:value></xf:item><xf:item><xf:label>Ms</xf:label><xf:value>Ms</xf:value></xf:item><xf:item><xf:label>Dr</xf:label><xf:value>Dr</xf:value></xf:item><xf:item><xf:label>Prof</xf:label><xf:value>Prof</xf:value></xf:item></xf:select1><xf:input bind="forename"><xf:label>Firstname</xf:label><xf:hint>Enter a first name</xf:hint><xf:alert>Two or more characters (A-Z a-z 0-9) required</xf:alert></xf:input><xf:input bind="surname"><xf:label>Surname</xf:label><xf:hint>Enter a surname</xf:hint><xf:alert>Two or more characters (A-Z a-z 0-9) required</xf:alert></xf:input><xf:input bind="telephone"><xf:label>Telephone</xf:label><xf:hint>Enter a telephone number</xf:hint><xf:alert>Six or more digits required</xf:alert></xf:input><xf:input bind="fax"><xf:label>Fax</xf:label><xf:hint>Enter a fax number</xf:hint><xf:alert>Six or more digits required</xf:alert></xf:input><xf:input bind="email"><xf:label>Email</xf:label><xf:hint>Enter an email address</xf:hint><xf:alert>Please enter an email address</xf:alert></xf:input></xf:group><xf:group appearance="bf:verticalTable" id="orderAddress"><xf:input bind="building_number" id="buildingNumber"><xf:label>Building Number</xf:label><xf:hint>Enter a building number or name</xf:hint><xf:alert>You must enter either a building number or name</xf:alert></xf:input><xf:input bind="building_name"><xf:label>Building Name</xf:label><xf:hint>Enter an building name or number</xf:hint><xf:alert>You must enter either a building name or number</xf:alert></xf:input><xf:input bind="address_line_1"><xf:label>Address Line 1</xf:label><xf:hint>Enter the address</xf:hint><xf:alert>You must enter at least one line of address</xf:alert></xf:input><xf:input bind="address_line_2"><xf:label>Address Line 2</xf:label><xf:hint>Enter the address</xf:hint><xf:alert>You must enter at least one line of address</xf:alert></xf:input><xf:input bind="address_line_3"><xf:label>Address Line 3</xf:label><xf:hint>Enter the address</xf:hint><xf:alert>You must enter at least one line of address</xf:alert></xf:input><xf:input bind="postcode" id="orderPostcode"><xf:label>Postcode</xf:label><xf:hint>Enter the postcode</xf:hint><xf:alert>You must enter a Postcode</xf:alert></xf:input><xf:input bind="country"><xf:label>Country</xf:label><xf:hint>Enter the Country</xf:hint><xf:alert>You must enter a Country</xf:alert></xf:input></xf:group></xf:group><xf:group><xf:group appearance="bf:verticalTable" id="orderDetail"><xf:input bind="description"><xf:label>Choose a Title for the Book</xf:label><xf:hint>Enter a Title for your book</xf:hint><xf:alert>You must enter a Title for your book</xf:alert></xf:input><xf:input bind="price" id="orderPrice"><xf:label>Price (£)</xf:label></xf:input><xf:input bind="quantity" id="orderQuantity"><xf:label>Quantity</xf:label><xf:hint>Enter the Quantity of books to Order</xf:hint><xf:alert>You must enter the Quantity of books to Order</xf:alert></xf:input><xf:output bind="total"><xf:label>Total (£)</xf:label></xf:output><xf:select1 bind="payment_method"><xf:label>Payment Method</xf:label><xf:hint>Select a Payment Method</xf:hint><xf:alert>A Payment Method is required</xf:alert><xf:item><xf:label>Credit Card</xf:label><xf:value>Credit Card</xf:value></xf:item><xf:item><xf:label>Debit Card</xf:label><xf:value>Debit Card</xf:value></xf:item><xf:item><xf:label>Cheque</xf:label><xf:value>Cheque</xf:value></xf:item><xf:item><xf:label>Postal Order</xf:label><xf:value>Postal Order</xf:value></xf:item></xf:select1></xf:group><xf:group id="orderAdvert"><img src="images/ad_bound.gif" alt="Little Red Book Advert"/></xf:group></xf:group><xf:trigger src="images/icons/btn_send_order.gif" id="sendOrder"><xf:label>Send Order</xf:label><xf:hint>Sends the order to the printers</xf:hint><xf:send submission="s-send"/></xf:trigger><xf:trigger src="images/icons/btn_showXML.gif" id="showXml"><xf:label>Show XML</xf:label><xf:hint>Shows the XML of the Order</xf:hint><bfc:show dialog="xmlDialog" ev:event="DOMActivate"/></xf:trigger><xf:trigger src="images/icons/btn_addXML.gif" id="addXml"><xf:label>Add XML</xf:label><xf:hint>Adds your new entry to the system</xf:hint><xf:send submission="s-send"/></xf:trigger></xf:group><bfc:dialog id="xmlDialog"><xf:label>Order XML Instance</xf:label><xf:group appearance="full"><script type="text/javascript">
+        <!-- xf:submission id="s-send" method="put" resource="http://localhost:8080/exist/rest/db/tmp/1.xml" -->
+        <xf:submission id="s-send" method="post" resource="order">
+            <xf:action ev:event="xforms-submit-error">
+                <xf:message>Order failed. Please fill in valid values</xf:message>
+            </xf:action>
+            <xf:action ev:event="xforms-submit-done">
+                <xf:message>Your Order has been submitted successfully.</xf:message>
+            </xf:action>
+        </xf:submission>
+    </xf:model>
+    <xf:group>
+        <xf:group>
+            <xf:group appearance="bf:verticalTable" id="orderContact">
+                <xf:select1 bind="title">
+                    <xf:label>Title</xf:label>
+                    <xf:hint>Select a title</xf:hint>
+                    <xf:alert>A title is required</xf:alert>
+                    <xf:item>
+                        <xf:label>Mr</xf:label>
+                        <xf:value>Mr</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Mrs</xf:label>
+                        <xf:value>Mrs</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Miss</xf:label>
+                        <xf:value>Miss</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Ms</xf:label>
+                        <xf:value>Ms</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Dr</xf:label>
+                        <xf:value>Dr</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Prof</xf:label>
+                        <xf:value>Prof</xf:value>
+                    </xf:item>
+                </xf:select1>
+                <xf:input bind="forename">
+                    <xf:label>Firstname</xf:label>
+                    <xf:hint>Enter a first name</xf:hint>
+                    <xf:alert>Two or more characters (A-Z a-z 0-9) required</xf:alert>
+                </xf:input>
+                <xf:input bind="surname">
+                    <xf:label>Surname</xf:label>
+                    <xf:hint>Enter a surname</xf:hint>
+                    <xf:alert>Two or more characters (A-Z a-z 0-9) required</xf:alert>
+                </xf:input>
+                <xf:input bind="telephone">
+                    <xf:label>Telephone</xf:label>
+                    <xf:hint>Enter a telephone number</xf:hint>
+                    <xf:alert>Six or more digits required</xf:alert>
+                </xf:input>
+                <xf:input bind="fax">
+                    <xf:label>Fax</xf:label>
+                    <xf:hint>Enter a fax number</xf:hint>
+                    <xf:alert>Six or more digits required</xf:alert>
+                </xf:input>
+                <xf:input bind="email">
+                    <xf:label>Email</xf:label>
+                    <xf:hint>Enter an email address</xf:hint>
+                    <xf:alert>Please enter an email address</xf:alert>
+                </xf:input>
+            </xf:group>
+            <xf:group appearance="bf:verticalTable" id="orderAddress">
+                <xf:input bind="building_number" id="buildingNumber">
+                    <xf:label>Building Number</xf:label>
+                    <xf:hint>Enter a building number or name</xf:hint>
+                    <xf:alert>You must enter either a building number or name</xf:alert>
+                </xf:input>
+                <xf:input bind="building_name">
+                    <xf:label>Building Name</xf:label>
+                    <xf:hint>Enter an building name or number</xf:hint>
+                    <xf:alert>You must enter either a building name or number</xf:alert>
+                </xf:input>
+                <xf:input bind="address_line_1">
+                    <xf:label>Address Line 1</xf:label>
+                    <xf:hint>Enter the address</xf:hint>
+                    <xf:alert>You must enter at least one line of address</xf:alert>
+                </xf:input>
+                <xf:input bind="address_line_2">
+                    <xf:label>Address Line 2</xf:label>
+                    <xf:hint>Enter the address</xf:hint>
+                    <xf:alert>You must enter at least one line of address</xf:alert>
+                </xf:input>
+                <xf:input bind="address_line_3">
+                    <xf:label>Address Line 3</xf:label>
+                    <xf:hint>Enter the address</xf:hint>
+                    <xf:alert>You must enter at least one line of address</xf:alert>
+                </xf:input>
+                <xf:input bind="postcode" id="orderPostcode">
+                    <xf:label>Postcode</xf:label>
+                    <xf:hint>Enter the postcode</xf:hint>
+                    <xf:alert>You must enter a Postcode</xf:alert>
+                </xf:input>
+                <xf:input bind="country">
+                    <xf:label>Country</xf:label>
+                    <xf:hint>Enter the Country</xf:hint>
+                    <xf:alert>You must enter a Country</xf:alert>
+                </xf:input>
+            </xf:group>
+        </xf:group>
+        <xf:group>
+            <xf:group appearance="bf:verticalTable" id="orderDetail">
+                <xf:input bind="description">
+                    <xf:label>Choose a Title for the Book</xf:label>
+                    <xf:hint>Enter a Title for your book</xf:hint>
+                    <xf:alert>You must enter a Title for your book</xf:alert>
+                </xf:input>
+                <xf:input bind="price" id="orderPrice">
+                    <xf:label>Price (£)</xf:label>
+                </xf:input>
+                <xf:input bind="quantity" id="orderQuantity">
+                    <xf:label>Quantity</xf:label>
+                    <xf:hint>Enter the Quantity of books to Order</xf:hint>
+                    <xf:alert>You must enter the Quantity of books to Order</xf:alert>
+                </xf:input>
+                <xf:output bind="total">
+                    <xf:label>Total (£)</xf:label>
+                </xf:output>
+                <xf:select1 bind="payment_method">
+                    <xf:label>Payment Method</xf:label>
+                    <xf:hint>Select a Payment Method</xf:hint>
+                    <xf:alert>A Payment Method is required</xf:alert>
+                    <xf:item>
+                        <xf:label>Credit Card</xf:label>
+                        <xf:value>Credit Card</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Debit Card</xf:label>
+                        <xf:value>Debit Card</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Cheque</xf:label>
+                        <xf:value>Cheque</xf:value>
+                    </xf:item>
+                    <xf:item>
+                        <xf:label>Postal Order</xf:label>
+                        <xf:value>Postal Order</xf:value>
+                    </xf:item>
+                </xf:select1>
+            </xf:group>
+            <xf:group id="orderAdvert">
+                <img src="images/ad_bound.gif" alt="Little Red Book Advert"/>
+            </xf:group>
+        </xf:group>
+        <xf:trigger src="images/icons/btn_send_order.gif" id="sendOrder">
+            <xf:label>Send Order</xf:label>
+            <xf:hint>Sends the order to the printers</xf:hint>
+            <xf:send submission="s-send"/>
+        </xf:trigger>
+        <xf:trigger src="images/icons/btn_showXML.gif" id="showXml">
+            <xf:label>Show XML</xf:label>
+            <xf:hint>Shows the XML of the Order</xf:hint>
+            <bfc:show dialog="xmlDialog" ev:event="DOMActivate"/>
+        </xf:trigger>
+        <xf:trigger src="images/icons/btn_addXML.gif" id="addXml">
+            <xf:label>Add XML</xf:label>
+            <xf:hint>Adds your new entry to the system</xf:hint>
+            <xf:send submission="s-send"/>
+        </xf:trigger>
+    </xf:group>
+    <bfc:dialog id="xmlDialog">
+        <xf:label>Order XML Instance</xf:label>
+        <xf:group appearance="full">
+            <script type="text/javascript">
             <!--
-                //TODO should not be onLoad, rather should be when xf:trigger with id='showXml' is fired
-                
-                dojo.addOnLoad(function(){
-                    /*
-                    var sessionId = document.getElementById("bfSessionKey").value;
-                    var address = "http://localhost:8080/exist/inspector/" + sessionId + "/C1/C2";
-                    document.getElementById('showXmlIframe').src = address;
-                    */
-                    
-                    var sessionId = document.getElementById("bfSessionKey").value;
-                    var address = "http://localhost:8080/exist/apps/xmlss/whatithink.com/betterform-instance-as-html.xql?bf-session-id=" + sessionId + "&xf-model-id=C1&xf-instance-id=C2";
-                    document.getElementById('showXmlIframe').src = address;
+                $(document).ready(function(){
+                    $("#showXml-value").click(function(){
+                        var sessionId = document.getElementById("bfSessionKey").value;
+                        var address = "http://localhost:8080/exist/apps/xmlss/whatithink.com/betterform-instance-as-html.xql?bf-session-id=" + sessionId + "&xf-model-id=C1&xf-instance-id=C2";
+                        document.getElementById('showXmlIframe').src = address;
+                    });
                 });
-            --></script><iframe id="showXmlIframe"/><xf:trigger><xf:label>Close</xf:label><bfc:hide dialog="xmlDialog" ev:event="DOMActivate"/></xf:trigger></xf:group></bfc:dialog></div>
+            -->
+            </script>
+            <iframe id="showXmlIframe"/>
+            <xf:trigger>
+                <xf:label>Close</xf:label>
+                <bfc:hide dialog="xmlDialog" ev:event="DOMActivate"/>
+            </xf:trigger>
+        </xf:group>
+    </bfc:dialog>
+</div>
