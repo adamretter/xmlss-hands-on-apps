@@ -117,7 +117,7 @@ declare function mylist:get-entries() as element(atom:entry)* {
 declare function mylist:as-atom-feed() as document-node() {
     document {
         <feed xmlns="http://www.w3.org/2005/Atom">
-            <title>whatithink.com by {security:get-username()}</title>
+            <title>seewhatithink.com by {security:get-username()}</title>
             <id>urn:uuid:{util:uuid()}</id>
             <updated>{xmldb:created(security:get-user-collection-path(), $mylist:mylist-filename)}</updated>
             <author>
