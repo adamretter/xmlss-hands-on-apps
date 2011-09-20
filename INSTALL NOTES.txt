@@ -197,7 +197,7 @@ De-select Glassfish, Select Tomcat
 Install to /usr/local
 
 2) Download the ubuntu package for MySQL Workbench from the MySQL web site
-sudo apt-get install libctemplate0 libzip1 python-pysqlite2 mysql-client python-crypto python-paramiko liblua-5.1-0
+sudo apt-get install libctemplate0 libzip1 python-pysqlite2 mysql-client python-crypto python-paramiko liblua5.1-0
 sudo dpkg -i mysql-workbench-gpl-5.2.27-1ubu1004-i386.deb
 
 3) Download and Install Aqua Datastudio from www.aquafold.com
