@@ -196,8 +196,11 @@ sudo ./netbeans-7.0-ml-javaee-linux.sh
 De-select Glassfish, Select Tomcat
 Install to /usr/local
 
+2) Download the ubuntu package for MySQL Workbench from the MySQL web site
+sudo apt-get install libctemplate0 libzip1 python-pysqlite2 mysql-client python-crypto python-paramiko liblua-5.1-0
+sudo dpkg -i mysql-workbench-gpl-5.2.27-1ubu1004-i386.deb
 
-2) Download and Install Aqua Datastudio from www.aquafold.com
+3) Download and Install Aqua Datastudio from www.aquafold.com
 Studio - LINUX (x86 - 32bit) (build: 9.0.15)
 
 tar zxvf ads-linux-x86-9.0.15.tar.gz
@@ -205,7 +208,7 @@ sudo mv datastudio /usr/local
 Add Item to Applications->Programming Menu
 
 
-3) Download and Install oXygen 12 from www.oxygenxml.com
+4) Download and Install oXygen 12 from www.oxygenxml.com
 http://www.oxygenxml.com/download_oxygenxml_editor.html
 
 chmod +x oxygen-Xbit.sh
@@ -214,7 +217,7 @@ Install to /usr/local/Oxygen XML Editor 12
 Add Item to Applications->Programming Menu
 
 
-4) Download and Install Protege 4.1 from http://protege.stanford.edu/
+5) Download and Install Protege 4.1 from http://protege.stanford.edu/
 
 chmod +x install_protege_4.1rc4.bin
 sudo ./install_protege_4.1rc4.bin
@@ -222,14 +225,14 @@ Install to /usr/local/Protege_4.1_rc4
 Add Item to Applications->Programming Menu
 
 
-5) Download and Install Google Chrome from http://www.google.com/chrome
+6) Download and Install Google Chrome from http://www.google.com/chrome
 Choose the .deb package for either the 32bit or 64bit version of Ubuntu
 that you previously installed.
 
 sudo dpkg -i google-chrome-stable_current_i386.deb
 
 
-6) Cosmetics - 
+7) Cosmetics - 
     * Add Shortcuts to the desktop for eXist-db Server, eXist-db Client and Printer Webapp
     * Add Shortcuts to the desktop for the two webapps
 
