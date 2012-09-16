@@ -19,9 +19,9 @@
 : the whatithink.com web application
 :
 : @author Adam Retter <adam.retter@googlemail.com>
-: @version 201109122029
+: @version 201209161751
 :)
-xquery version "1.0";
+xquery version "3.0";
 
 module namespace security = "http://whatithink.com/xquery/security";
 
@@ -60,9 +60,7 @@ declare function security:register-user($user as element(user)) as xs:boolean {
     (: temporarily become admin :)
     if(security:login($config:admin-username, $config:admin-password)) then
     
-        util:catch(
-            "java.lang.Exception",
-            (
+        try {            
                 (: create the user account :)
                 let $null := xmldb:create-user($user/username, $user/password1, $config:wit-group, "/db") return
                 
@@ -74,25 +72,25 @@ declare function security:register-user($user as element(user)) as xs:boolean {
                     let $user-collection-path := xmldb:create-collection($config:wit-users-collection, $user/username),
                     
                     (: set collection permissions :)
-                    $null := xmldb:set-collection-permissions($user-collection-path, $user/username, $config:wit-group, xmldb:string-to-permissions("rwur--r--")),
+                    $null := xmldb:set-collection-permissions($user-collection-path, $user/username, $config:wit-group, xmldb:string-to-permissions("rwxr--r--")),
                     
                     (: store their metadata :)
                     $user-metadata-filename := xmldb:store($user-collection-path, $security:user-metadata-filename, <user>{$user/metadata}</user>),
                     
                     (: set metadata permissions :)
-                    $null := xmldb:set-resource-permissions($user-collection-path, $security:user-metadata-filename, $user/username, $config:wit-group, xmldb:string-to-permissions("rwu------"))
+                    $null := xmldb:set-resource-permissions($user-collection-path, $security:user-metadata-filename, $user/username, $config:wit-group, xmldb:string-to-permissions("rwx------"))
                     
                     return
                         true()
                 ) else
                     false()
-            ),
-            (
+        } catch * {
+            let $log := util:log("error", ($err:code , $err:description, $err:value)) return  
+                
                 (: could not create user so reset to guest user :)
                 let $null := security:logout() return
                     false()
-            )
-        )
+        }
     else
         false()
 };
@@ -131,13 +129,13 @@ declare function security:create-user-from-xml($user-upload as element(user-uplo
                 let $user-collection-path := xmldb:create-collection($config:wit-users-collection, $user/username),
                     
                 (: set collection permissions :)
-                $null := xmldb:set-collection-permissions($user-collection-path, $user/username, $config:wit-group, xmldb:string-to-permissions("rwur--r--")),
+                $null := xmldb:set-collection-permissions($user-collection-path, $user/username, $config:wit-group, xmldb:string-to-permissions("rwxr--r--")),
                     
                 (: store their metadata :)
                 $user-metadata-filename := xmldb:store($user-collection-path, $security:user-metadata-filename, <user>{$user/metadata}</user>),
                     
                 (: set metadata permissions :)
-                $null := xmldb:set-resource-permissions($user-collection-path, $security:user-metadata-filename, $user/username, $config:wit-group, xmldb:string-to-permissions("rwu------"))
+                $null := xmldb:set-resource-permissions($user-collection-path, $security:user-metadata-filename, $user/username, $config:wit-group, xmldb:string-to-permissions("rwx------"))
                     
                 return
                     true()
