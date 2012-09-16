@@ -142,7 +142,11 @@ let $menus := if($is-logged-in)then
             else if(request:get-method() eq "POST")then
                 let $request-data := request:get-data()/user return
                     if(security:register-user($request-data))then
-                        local:redirect("entry/browse")
+                    (
+                        (: TODO path should not be hardcoded, but local:redirect doesnt seem to work here?!? :)
+                        response:redirect-to(xs:anyURI("http://localhost:8080/exist/apps/xmlss/whatithink.com/entry/browse")),
+                        <empty/>
+                    )
                     else
                     (
                         (: could not register the user - xform will show error :)
