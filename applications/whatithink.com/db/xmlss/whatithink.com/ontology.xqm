@@ -58,7 +58,7 @@ declare function ontology:create-from-xml($ontology-upload as element(ontology-u
         
         (: overwrite the existing Ontology :)
         let $ontology-uri := xmldb:store($config:wit-ontology-collection, $ontology:ontology-doc, $ontology),
-        $null := sm:chmod(xs:anyURI($ontology-uri), "rwurwur--") return
+        $null := sm:chmod(xs:anyURI($ontology-uri), "rwxrwxr--") return
             true() 
 };
 

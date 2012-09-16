@@ -146,7 +146,7 @@ declare function mylist:get-or-create() as document-node() {
             fn:doc($mylist-uri)
         else
             let $mylist-uri := xmldb:store(security:get-user-collection-path(), $mylist:mylist-filename, <mylist:list/>),
-            $null := sm:chmod(xs:anyURI($mylist-uri), "rwur--r--") return
+            $null := sm:chmod(xs:anyURI($mylist-uri), "rwxr--r--") return
                 fn:doc($mylist-uri)
 };
 

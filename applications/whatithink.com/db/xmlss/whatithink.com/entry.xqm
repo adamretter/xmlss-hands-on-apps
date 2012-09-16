@@ -188,7 +188,7 @@ declare function entry:browse-all-entries() as element(xh:ul) {
 :)
 declare function entry:add($entry as element(atom:entry)) as xs:boolean {
     let $entry-uri := xmldb:store(security:get-user-collection-path(), (), $entry),
-    $null := sm:chmod(xs:anyURI($entry-uri), "rwur-ur--"),
+    $null := sm:chmod(xs:anyURI($entry-uri), "rwxr-xr--"),
     $null := update value fn:doc($entry-uri)/atom:entry/atom:id with fn:concat("urn:uuid:", util:uuid()) return
         not(empty($entry-uri))
 };
@@ -223,7 +223,7 @@ declare function entry:add-xml($entry-upload as element(entry-upload)) as xs:boo
     
         let $entry-uri := xmldb:store(security:get-user-collection-path($for-username), (), $entry),
         $null := sm:chown(xs:anyURI($entry-uri), $for-username),
-        $null := sm:chmod(xs:anyURI($entry-uri), "rwur-ur--") return
+        $null := sm:chmod(xs:anyURI($entry-uri), "rwxr-xr--") return
             not(empty($entry-uri))
 };
 
