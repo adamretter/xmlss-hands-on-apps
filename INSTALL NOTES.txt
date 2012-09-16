@@ -89,7 +89,7 @@ How to Install XMLSS whatithink.com eXist-db Training Web Application
 ---------------------------------------------------------------------
 1) Checkout eXist-db trunk from SourceForge Subversion e.g.
 
-sudo svn co https://exist.svn.sourceforge.net/svnroot/exist/trunk/eXist /usr/local/eXist
+sudo svn co http://svn.code.sf.net/p/exist/code/trunk/eXist /usr/local/eXist
 sudo chown -R xmlss:xmlss /usr/local/eXist
 
 
@@ -110,51 +110,43 @@ cd $EXIST_HOME
 ./build.sh
 
 
-5) Modify $EXIST_HOME/webapp/WEB-INF/web.xml so that XFormsFilter is filtering the path /apps/* e.g.
-
-<filter-mapping>
-    <filter-name>XFormsFilter</filter-name>
-    <url-pattern>/apps/*</url-pattern>
-</filter-mapping>
-
-
-6) Uncomment the xslfo XQuery extension module in $EXIST_HOME/conf.xml e.g.
+5) Uncomment the xslfo XQuery extension module in $EXIST_HOME/conf.xml e.g.
 
 <module uri="http://exist-db.org/xquery/xslfo" class="org.exist.xquery.modules.xslfo.XSLFOModule">
     <parameter name="processorAdapter" value="org.exist.xquery.modules.xslfo.ApacheFopProcessorAdapter"/>
 </module>
 
 
-7) Uncomment datetime XQuery extension module in $EXIST_HOME/conf.xml e.g.
+6) Uncomment datetime XQuery extension module in $EXIST_HOME/conf.xml e.g.
 
 <module uri="http://exist-db.org/xquery/datetime" class="org.exist.xquery.modules.datetime.DateTimeModule"/>
 
 
-8) Checkout the eXist-db database backup of the whatithink.com web application
+7) Checkout the eXist-db database backup of the whatithink.com web application
 from SourceForge Subversion e.g.
 
 sudo svn co https://seewhatithink.svn.sourceforge.net/svnroot/seewhatithink/trunk /usr/local/seewhatithink
 sudo chown -R xmlss:xmlss /usr/local/seewhatithink
 
 
-9) Startup the eXist-db database e.g.
+8) Startup the eXist-db database e.g.
 
 cd $EXIST_HOME
 bin/startup.sh
 
 
-10) Restore the database backup from Step (8) e.g.
+9) Restore the database backup from Step (8) e.g.
 
 cd $EXIST_HOME
 bin/backup.sh -u admin -r ../seewhatithink/applications/whatithink.com/db/__contents__.xml 
  
 
-11) Shutdown the eXist-db database 
+10) Shutdown the eXist-db database 
 cd $EXIST_HOME
 bin/shutdown.sh
 
 
-12) Startup the eXist-db database 
+11) Startup the eXist-db database 
 cd $EXIST_HOME
 bin/startup.sh
 
