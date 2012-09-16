@@ -369,7 +369,10 @@ let $menus := if($is-logged-in)then
                 mylist:as-atom-feed()
                 
         else if($exist:path eq "/mylist.pdf")then
-            (: TODO consider a redirect to /list/<username>/mylist.pdf i.e. make lists public atom feeds etc :)
+            if(empty(mylist:get-entries()))then
+                local:redirect("mylist")
+            else
+                (: TODO consider a redirect to /list/<username>/mylist.pdf i.e. make lists public atom feeds etc :)
                 let $atom := mylist:as-atom-feed(),
                 $fo-doc := transform:transform($atom, fn:doc(fn:concat($rel-path, "/mylist-to-fo.xslt")), <parameters><param name="logoUri" value="{$rel-path}/images/bg/banner.gif"/><param name="bgUri" value="{$rel-path}/images/bg/fo-background.gif"/></parameters>),
                 $pdf := xslfo:render($fo-doc, "application/pdf", ()) return
