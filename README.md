@@ -1,3 +1,16 @@
+XML Summer School - Hands On - Applications
+-------------------------------------------
+These are the applications used for teaching the "Hands On" course
+at the XML Summer School 2012. http://xmlsummerschool.com/curriculum-2012/hands-on-introduction-2012/
+
+The source repository now lives here on GitHub.
+
+The seewhatithink.com application runs on eXist-db 2.0 and is provided as a database backup. To install
+eXist-db visit http://www.exist-db.org.
+
+The Printer application is written in Scala and requires you to have Maven installed to compile
+and run the application. Maven can be installed by visiting http://maven.apache.org/
+
 About
 -----
 These are the instructions for installing the seewhatithink.com
